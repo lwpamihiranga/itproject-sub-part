@@ -408,7 +408,6 @@
             this.Controls.Add(this.label1);
             this.Name = "Attendance";
             this.Size = new System.Drawing.Size(683, 508);
-            this.Load += new System.EventHandler(this.Attendance_Load);
             tabView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tabControl1.ResumeLayout(false);

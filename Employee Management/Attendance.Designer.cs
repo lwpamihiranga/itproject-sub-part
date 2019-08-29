@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TabPage tabView;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Attendance));
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.EmpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,7 +82,6 @@
             tabView.TabIndex = 2;
             tabView.Text = "View Attendance";
             tabView.UseVisualStyleBackColor = true;
-           
             // 
             // dataGridView
             // 
@@ -334,7 +334,7 @@
             this.btnInsert.TabIndex = 5;
             this.btnInsert.Text = "INSERT";
             this.btnInsert.UseVisualStyleBackColor = false;
-          this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // lblLeftTme
             // 
@@ -403,6 +403,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.label1);

@@ -38,7 +38,6 @@
             this.button4 = new System.Windows.Forms.Button();
             this.requestPortal1 = new Employee_Management.RequestPortal();
             this.homeUserControl1 = new Employee_Management.HomeUserControl();
-            this.attendance2 = new Employee_Management.Attendance();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -134,21 +133,13 @@
             // 
             // homeUserControl1
             // 
+            this.homeUserControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("homeUserControl1.BackgroundImage")));
             this.homeUserControl1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.homeUserControl1.Location = new System.Drawing.Point(231, 2);
             this.homeUserControl1.Name = "homeUserControl1";
             this.homeUserControl1.Size = new System.Drawing.Size(683, 508);
             this.homeUserControl1.TabIndex = 12;
             this.homeUserControl1.Load += new System.EventHandler(this.HomeUserControl1_Load);
-            // 
-            // attendance2
-            // 
-            this.attendance2.BackColor = System.Drawing.SystemColors.Control;
-            this.attendance2.Location = new System.Drawing.Point(232, 2);
-            this.attendance2.Name = "attendance2";
-            this.attendance2.Size = new System.Drawing.Size(683, 508);
-            this.attendance2.TabIndex = 0;
-            this.attendance2.Load += new System.EventHandler(this.Attendance2_Load);
             // 
             // Home
             // 
@@ -157,7 +148,6 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(915, 510);
-            this.Controls.Add(this.attendance2);
             this.Controls.Add(this.homeUserControl1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.requestPortal1);

@@ -28,7 +28,7 @@ namespace Employee_Management
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        { 
             Update u = new Update();
             u.ShowDialog();
         }
@@ -37,6 +37,7 @@ namespace Employee_Management
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
+            
             a.EmployeeId = Int32.Parse(txtEmployeeId.Text);
             a.Date = dateTimePicker1.Text;
             a.ArrivedTime = int.Parse(txtArrivedTime.Text);
@@ -56,10 +57,10 @@ namespace Employee_Management
             dataGridView.DataSource = dt;
         }
 
-        private void TabView_Click(object sender, EventArgs e)
+
+        private void Attendance_Load(object sender, EventArgs e)
         {
-            DataTable dt = a.Select();
-            dataGridView.DataSource = dt;
+
         }
     }
 }

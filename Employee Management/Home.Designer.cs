@@ -37,8 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button4 = new System.Windows.Forms.Button();
             this.requestPortal1 = new Employee_Management.RequestPortal();
-            this.attendance1 = new Employee_Management.Attendance();
             this.homeUserControl1 = new Employee_Management.HomeUserControl();
+            this.attendance2 = new Employee_Management.Attendance();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -132,15 +132,6 @@
             this.requestPortal1.TabIndex = 10;
             this.requestPortal1.Load += new System.EventHandler(this.RequestPortal1_Load);
             // 
-            // attendance1
-            // 
-            this.attendance1.BackColor = System.Drawing.SystemColors.Control;
-            this.attendance1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.attendance1.Location = new System.Drawing.Point(232, 2);
-            this.attendance1.Name = "attendance1";
-            this.attendance1.Size = new System.Drawing.Size(682, 505);
-            this.attendance1.TabIndex = 9;
-            // 
             // homeUserControl1
             // 
             this.homeUserControl1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -150,6 +141,15 @@
             this.homeUserControl1.TabIndex = 12;
             this.homeUserControl1.Load += new System.EventHandler(this.HomeUserControl1_Load);
             // 
+            // attendance2
+            // 
+            this.attendance2.BackColor = System.Drawing.SystemColors.Control;
+            this.attendance2.Location = new System.Drawing.Point(232, 2);
+            this.attendance2.Name = "attendance2";
+            this.attendance2.Size = new System.Drawing.Size(683, 508);
+            this.attendance2.TabIndex = 0;
+            this.attendance2.Load += new System.EventHandler(this.Attendance2_Load);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -157,10 +157,10 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(915, 510);
+            this.Controls.Add(this.attendance2);
             this.Controls.Add(this.homeUserControl1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.requestPortal1);
-            this.Controls.Add(this.attendance1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.button2);
@@ -192,6 +192,7 @@
         private RequestPortal requestPortal1;
         private System.Windows.Forms.Button button4;
         private HomeUserControl homeUserControl1;
+        private Attendance attendance2;
     }
 }
 

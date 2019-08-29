@@ -11,6 +11,7 @@ namespace Employee_Management
 {
     class AttendanceClass
     {
+        
         public int AttendId;
 
         public int EmployeeId;
@@ -170,6 +171,7 @@ namespace Employee_Management
         }
 
     }
+    
 }
 
 

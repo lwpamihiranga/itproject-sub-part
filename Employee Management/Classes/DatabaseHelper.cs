@@ -213,6 +213,44 @@ namespace Employee_Management.Classes
             }
             return dt;
         }
+        public bool update(int id,string empid,string date,string department,string description,int hours)
+        {
+            string conn = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            bool isSuccess = false;
+            SqlConnection c = new SqlConnection(conn);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "UPDATE LeaveRequests SET EmpID = @EmpID,LeaveHours = @LeaveHours, Description = @Description, Department = @Department WHERE ReqID = " + id;
+
+                SqlCommand cmd = new SqlCommand(sql, c);
+                cmd.Parameters.AddWithValue("@EmpID", empid);
+                cmd.Parameters.AddWithValue("@LeaveHours", hours);
+                cmd.Parameters.AddWithValue("@Description", description);
+                cmd.Parameters.AddWithValue("@Department", department);
+
+                c.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                c.Close();
+            }
+            return isSuccess;
+        }
 
 
 

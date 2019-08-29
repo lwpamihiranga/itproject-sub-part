@@ -20,13 +20,15 @@ namespace Employee_Management
         AttendanceClass a = new AttendanceClass();
         private void Button1_Click(object sender, EventArgs e)
         {
+            
             a.EmployeeId = Int32.Parse(txtUpdateEmployeeId.Text);
             a.Date = dateTimePickerUpdate.Text;
             a.ArrivedTime = int.Parse(txtUpdateArrivedTime.Text);
             a.LeftTime = int.Parse(txtUpdateLeftTime.Text);
             
 
-            bool success = a.Update(a);
+             bool success = a.Update(a);
+            
             if (success == true)
             {
                 MessageBox.Show("Updated successfully");
@@ -35,7 +37,12 @@ namespace Employee_Management
             {
                 MessageBox.Show("Unsucessful Update");
             }
-            //this.Hide();
+            this.Hide();
+        }
+
+        private void Update_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,9 +30,11 @@ namespace Employee_Management
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {
-            requestPortal1.Hide();
-            attendance1.Hide();
+        {   
+                requestPortal1.Hide();
+                attendance2.Hide();
+            
+            
 
           
 
@@ -102,16 +104,22 @@ namespace Employee_Management
 
         private void Button3_Click_2(object sender, EventArgs e)
         {
-            requestPortal1.Show();
-            attendance1.Hide();
-            homeUserControl1.Hide();
+            
+                requestPortal1.Show();
+                attendance2.Hide();
+                homeUserControl1.Hide();
+           
+            
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            requestPortal1.Hide();
-            homeUserControl1.Hide();
-            attendance1.Show();
+            
+                requestPortal1.Hide();
+                homeUserControl1.Hide();
+                attendance2.Show();
+           
+            
         }
 
         private void RequestPortal1_Load(object sender, EventArgs e)
@@ -121,15 +129,23 @@ namespace Employee_Management
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            requestPortal1.Hide();
-            attendance1.Hide();
-            homeUserControl1.Show();
+           
+                requestPortal1.Hide();
+                attendance2.Hide();
+                homeUserControl1.Show();
+           
+            
         }
 
         private void HomeUserControl1_Load(object sender, EventArgs e)
         {
             
            
+        }
+
+        private void Attendance2_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

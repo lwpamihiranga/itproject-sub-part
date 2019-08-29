@@ -30,6 +30,12 @@
         {
             System.Windows.Forms.TabPage tabView;
             this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.EmpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAttendance = new System.Windows.Forms.TabPage();
@@ -52,12 +58,6 @@
             this.lblEmployeeId = new System.Windows.Forms.Label();
             this.ssss = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.EmpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ArrivedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             tabView = new System.Windows.Forms.TabPage();
             tabView.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
@@ -81,7 +81,7 @@
             tabView.TabIndex = 2;
             tabView.Text = "View Attendance";
             tabView.UseVisualStyleBackColor = true;
-            tabView.Click += new System.EventHandler(this.TabView_Click);
+           
             // 
             // dataGridView
             // 
@@ -98,6 +98,52 @@
             this.dataGridView.Size = new System.Drawing.Size(646, 214);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // EmpId
+            // 
+            this.EmpId.DataPropertyName = "EmpID";
+            this.EmpId.HeaderText = "EmpId";
+            this.EmpId.Name = "EmpId";
+            this.EmpId.ReadOnly = true;
+            this.EmpId.Width = 75;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // ArrivedTime
+            // 
+            this.ArrivedTime.DataPropertyName = "inTime";
+            this.ArrivedTime.HeaderText = "Arrived Time";
+            this.ArrivedTime.Name = "ArrivedTime";
+            this.ArrivedTime.ReadOnly = true;
+            this.ArrivedTime.Width = 125;
+            // 
+            // LeftTime
+            // 
+            this.LeftTime.DataPropertyName = "outTime";
+            this.LeftTime.HeaderText = "Left Time";
+            this.LeftTime.Name = "LeftTime";
+            this.LeftTime.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "EDIT";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "DELETE";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label1
             // 
@@ -288,7 +334,7 @@
             this.btnInsert.TabIndex = 5;
             this.btnInsert.Text = "INSERT";
             this.btnInsert.UseVisualStyleBackColor = false;
-            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
+          this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
             // lblLeftTme
             // 
@@ -352,52 +398,6 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
-            // EmpId
-            // 
-            this.EmpId.DataPropertyName = "EmpID";
-            this.EmpId.HeaderText = "EmpId";
-            this.EmpId.Name = "EmpId";
-            this.EmpId.ReadOnly = true;
-            this.EmpId.Width = 75;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // ArrivedTime
-            // 
-            this.ArrivedTime.DataPropertyName = "inTime";
-            this.ArrivedTime.HeaderText = "Arrived Time";
-            this.ArrivedTime.Name = "ArrivedTime";
-            this.ArrivedTime.ReadOnly = true;
-            this.ArrivedTime.Width = 125;
-            // 
-            // LeftTime
-            // 
-            this.LeftTime.DataPropertyName = "outTime";
-            this.LeftTime.HeaderText = "Left Time";
-            this.LeftTime.Name = "LeftTime";
-            this.LeftTime.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "EDIT";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "DELETE";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
             // Attendance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,6 +408,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Attendance";
             this.Size = new System.Drawing.Size(683, 508);
+            this.Load += new System.EventHandler(this.Attendance_Load);
             tabView.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.tabControl1.ResumeLayout(false);

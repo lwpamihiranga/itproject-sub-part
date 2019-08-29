@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUpdateLeftTime = new System.Windows.Forms.TextBox();
+            this.txtUpdateArrivedTime = new System.Windows.Forms.TextBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.dateTimePickerUpdate = new System.Windows.Forms.DateTimePicker();
+            this.txtUpdateEmployeeId = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,51 +42,51 @@
             ((System.ComponentModel.ISupportInitialize)(this.ssss)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox3
+            // txtUpdateLeftTime
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(215, 209);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(242, 24);
-            this.textBox3.TabIndex = 30;
+            this.txtUpdateLeftTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateLeftTime.Location = new System.Drawing.Point(215, 209);
+            this.txtUpdateLeftTime.Name = "txtUpdateLeftTime";
+            this.txtUpdateLeftTime.Size = new System.Drawing.Size(242, 24);
+            this.txtUpdateLeftTime.TabIndex = 30;
             // 
-            // textBox2
+            // txtUpdateArrivedTime
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(215, 174);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(242, 24);
-            this.textBox2.TabIndex = 29;
+            this.txtUpdateArrivedTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateArrivedTime.Location = new System.Drawing.Point(215, 174);
+            this.txtUpdateArrivedTime.Name = "txtUpdateArrivedTime";
+            this.txtUpdateArrivedTime.Size = new System.Drawing.Size(242, 24);
+            this.txtUpdateArrivedTime.TabIndex = 29;
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(81, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(376, 26);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "UPDATE";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.Button1_Click);
+            this.btnUpdate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(81, 263);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(376, 26);
+            this.btnUpdate.TabIndex = 28;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.Button1_Click);
             // 
-            // dateTimePicker1
+            // dateTimePickerUpdate
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 134);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(242, 24);
-            this.dateTimePicker1.TabIndex = 27;
+            this.dateTimePickerUpdate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerUpdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerUpdate.Location = new System.Drawing.Point(215, 134);
+            this.dateTimePickerUpdate.Name = "dateTimePickerUpdate";
+            this.dateTimePickerUpdate.Size = new System.Drawing.Size(242, 24);
+            this.dateTimePickerUpdate.TabIndex = 27;
             // 
-            // textBox1
+            // txtUpdateEmployeeId
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(215, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 24);
-            this.textBox1.TabIndex = 26;
+            this.txtUpdateEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateEmployeeId.Location = new System.Drawing.Point(215, 96);
+            this.txtUpdateEmployeeId.Name = "txtUpdateEmployeeId";
+            this.txtUpdateEmployeeId.Size = new System.Drawing.Size(242, 24);
+            this.txtUpdateEmployeeId.TabIndex = 26;
             // 
             // label4
             // 
@@ -159,11 +159,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(534, 361);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUpdateLeftTime);
+            this.Controls.Add(this.txtUpdateArrivedTime);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.dateTimePickerUpdate);
+            this.Controls.Add(this.txtUpdateEmployeeId);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -180,11 +180,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUpdateLeftTime;
+        private System.Windows.Forms.TextBox txtUpdateArrivedTime;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerUpdate;
+        private System.Windows.Forms.TextBox txtUpdateEmployeeId;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

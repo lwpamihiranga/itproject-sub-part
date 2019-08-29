@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace Employee_Management
 {
     class AttendanceClass
     {
+        public int AttendId;
 
         public int EmployeeId;
 
@@ -62,6 +64,31 @@ namespace Employee_Management
         }
 
 
+        public DataTable Select()
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT EmpID,date,inTime,outTime  FROM Attendance";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+                
+            }
+            return dt;
+        }
 
         public bool Update(AttendanceClass a)
         {
@@ -78,6 +105,7 @@ namespace Employee_Management
                 cmd.Parameters.AddWithValue("@date", a.Date);
                 cmd.Parameters.AddWithValue("@inTime", a.ArrivedTime);
                 cmd.Parameters.AddWithValue("@outTime", a.LeftTime);
+                cmd.Parameters.AddWithValue("@AttendID", a.AttendId);
 
 
 
@@ -99,10 +127,48 @@ namespace Employee_Management
             }
             finally
             {
-
+                conn.Close();
             }
             return isSuccess;
         }
+
+    public bool Delete(AttendanceClass a)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myConnectionString);
+
+            try
+            {
+                string sql = "DELETE FROM Attendance WHERE AttendID=@AttendID";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@AttendId", a.AttendId);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            
+            }
+            catch(Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+            }
+            return isSuccess;
+        }
+
     }
 }
 

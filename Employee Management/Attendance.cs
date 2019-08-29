@@ -40,10 +40,10 @@ namespace Employee_Management
             a.EmployeeId = Int32.Parse(txtEmployeeId.Text);
             a.Date = dateTimePicker1.Text;
             a.ArrivedTime = int.Parse(txtArrivedTime.Text);
-           // a.LeftTime = int.Parse(txtLeavingTime.Text);
+           // a.LeftTime = int.Parse(txtLeaftTime.Text);
 
-            bool sucess = a.Insert(a);
-            if (sucess == true)
+            bool success = a.Insert(a);
+            if (success == true)
             {
                 MessageBox.Show("Insertion successful");
             }
@@ -51,6 +51,15 @@ namespace Employee_Management
             {
                 MessageBox.Show("Insertion unsucessful");
             }
+
+            DataTable dt = a.Select();
+            dataGridView.DataSource = dt;
+        }
+
+        private void TabView_Click(object sender, EventArgs e)
+        {
+            DataTable dt = a.Select();
+            dataGridView.DataSource = dt;
         }
     }
 }

@@ -70,12 +70,22 @@ namespace Employee_Management
            
             if (e.ColumnIndex == gridView.Columns["Edit"].Index && e.RowIndex >= 0)
             {
+                if(isSearchEnabled)
+                {
+                    string it = ITNO.Text;
+                    int id = dbhelper.getRequestIdWhenSearching(it, e.RowIndex);
+                    editRequestID = id;
+                    EditRequestPopupWindow edit = new EditRequestPopupWindow();
+                    edit.ShowDialog();
+                }
+                else
+                {
+                    int id = dbhelper.getRequestId(e.RowIndex);
+                    editRequestID = id;
+                    EditRequestPopupWindow edit = new EditRequestPopupWindow();
+                    edit.ShowDialog();
+                }
                 
-                
-                int id = dbhelper.getRequestId(e.RowIndex);
-                editRequestID = id;
-                EditRequestPopupWindow edit = new EditRequestPopupWindow();
-                edit.ShowDialog();
             }
             if (e.ColumnIndex == gridView.Columns["Delete"].Index && e.RowIndex >= 0)
             {

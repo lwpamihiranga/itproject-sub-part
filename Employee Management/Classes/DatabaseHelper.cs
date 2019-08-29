@@ -9,25 +9,14 @@ using System.Threading.Tasks;
 
 namespace Employee_Management.Classes
 {
-    public class sendRequest
+    public class DatabaseHelper
     {
-        static int requestID = 8;
-        string name = "SBA";
-        string desc = "Example";
-        string ITNO;
-
-        public sendRequest(string it)
-        {
-           ITNO = it;
-            requestID++;
-           
-        }
-        public sendRequest()
-        {
-
-        }
        
 
+        public DatabaseHelper()
+        {
+           
+        }
         
         public bool insert(string id,string date,int hours,string department,string description)
         {

@@ -17,6 +17,8 @@ namespace Employee_Management
         static int numberOfRows = 0;
         public static bool isSearchEnabled = false;
         public static int editRequestID = 0;
+
+        DatabaseHelper dbhelper = new DatabaseHelper();
         
         public RequestPortal()
         {
@@ -31,10 +33,10 @@ namespace Employee_Management
         private void RequestPortal_Load(object sender, EventArgs e)
         {
 
-            sendRequest s1 = new sendRequest();
-            DataTable dt = s1.Select();
+            
+            DataTable dt = dbhelper.Select();
 
-            numberOfRows = s1.getNumberOfRows();
+            numberOfRows = dbhelper.getNumberOfRows();
 
 
 
@@ -47,17 +49,16 @@ namespace Employee_Management
             string it = ITNO.Text;
             if(!(it.Equals("")) && !(it.Equals("Search..")))
             {
-                sendRequest s = new sendRequest(it);
+                
                 isSearchEnabled = true;
-                DataTable dt = s.search(it);
+                DataTable dt = dbhelper.search(it);
                 gridView.DataSource = dt;
             }
             else
             {
                 MessageBox.Show("Enter a valid Employee ID");
-                sendRequest s1 = new sendRequest();
-                DataTable dt2 = s1.Select();
-                numberOfRows = s1.getNumberOfRows();
+                DataTable dt2 = dbhelper.Select();
+                numberOfRows = dbhelper.getNumberOfRows();
                 gridView.DataSource = dt2;
             }
            
@@ -70,8 +71,8 @@ namespace Employee_Management
             if (e.ColumnIndex == gridView.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 
-                sendRequest sr = new sendRequest();
-                int id = sr.getRequestId(e.RowIndex);
+                
+                int id = dbhelper.getRequestId(e.RowIndex);
                 editRequestID = id;
                 EditRequestPopupWindow edit = new EditRequestPopupWindow();
                 edit.ShowDialog();
@@ -81,16 +82,15 @@ namespace Employee_Management
                 
                 if(!isSearchEnabled)
                 {
-                    sendRequest sr = new sendRequest();
-                    int id = sr.getRequestId(e.RowIndex);
-                    if (numberOfRows == sr.getNumberOfRows())
+                    int id = dbhelper.getRequestId(e.RowIndex);
+                    if (numberOfRows == dbhelper.getNumberOfRows())
                     {
-                        if (sr.deleteRow(id))
+                        if (dbhelper.deleteRow(id))
                         {
                             MessageBox.Show("Deleted Successfully!");
-                            DataTable dt = sr.Select();
+                            DataTable dt = dbhelper.Select();
                             gridView.DataSource = dt;
-                            numberOfRows = sr.getNumberOfRows();
+                            numberOfRows = dbhelper.getNumberOfRows();
 
 
                         }
@@ -102,9 +102,9 @@ namespace Employee_Management
                     else
                     {
                         MessageBox.Show("You can't Delete a record right now because the table has been updated frequently!");
-                        DataTable dt = sr.Select();
+                        DataTable dt = dbhelper.Select();
                         gridView.DataSource = dt;
-                        numberOfRows = sr.getNumberOfRows();
+                        numberOfRows = dbhelper.getNumberOfRows();
                     }
                 }
                 else
@@ -112,16 +112,16 @@ namespace Employee_Management
                     string it = ITNO.Text;
                     if(!it.Equals(""))
                     {
-                        sendRequest sr = new sendRequest();
-                        int id = sr.getRequestIdWhenSearching(it, e.RowIndex);
-                        if (numberOfRows == sr.getNumberOfRows())
+                        
+                        int id = dbhelper.getRequestIdWhenSearching(it, e.RowIndex);
+                        if (numberOfRows == dbhelper.getNumberOfRows())
                         {
-                            if (sr.deleteRow(id))
+                            if (dbhelper.deleteRow(id))
                             {
                                 MessageBox.Show("Deleted Successfully!");
-                                DataTable dt = sr.Select();
+                                DataTable dt = dbhelper.Select();
                                 gridView.DataSource = dt;
-                                numberOfRows = sr.getNumberOfRows();
+                                numberOfRows = dbhelper.getNumberOfRows();
 
 
                             }
@@ -133,9 +133,9 @@ namespace Employee_Management
                         else
                         {
                             MessageBox.Show("You can't Delete a record right now because the table has been updated frequently!");
-                            DataTable dt = sr.Select();
+                            DataTable dt = dbhelper.Select();
                             gridView.DataSource = dt;
-                            numberOfRows = sr.getNumberOfRows();
+                            numberOfRows = dbhelper.getNumberOfRows();
                         }
                     }
                     
@@ -151,9 +151,8 @@ namespace Employee_Management
         private void Button2_Click(object sender, EventArgs e)
         {
             isSearchEnabled = false;
-            sendRequest s1 = new sendRequest();
-            DataTable dt = s1.Select();
-            numberOfRows = s1.getNumberOfRows();
+            DataTable dt = dbhelper.Select();
+            numberOfRows = dbhelper.getNumberOfRows();
             gridView.DataSource = dt;
         }
 
@@ -182,8 +181,8 @@ namespace Employee_Management
                 string department = textBox4.Text;
                 string description = textDescription.Text;
 
-                sendRequest s = new sendRequest();
-                if(s.insert(id, date, hours, department, description))
+               
+                if(dbhelper.insert(id, date, hours, department, description))
                 {
                     MessageBox.Show("Request was sent!");
                     textBox1.Text = "";

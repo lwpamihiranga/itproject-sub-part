@@ -53,7 +53,7 @@
     <Compile Include="Attendance.Designer.cs">
       <DependentUpon>Attendance.cs</DependentUpon>
     </Compile>
-    <Compile Include="Classes\sendRequest.cs" />
+    <Compile Include="Classes\DatabaseHelper.cs" />
     <Compile Include="EditRequestPopupWindow.cs">
       <SubType>Form</SubType>
     </Compile>

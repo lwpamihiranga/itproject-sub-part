@@ -53,6 +53,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.textDescription = new System.Windows.Forms.TextBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -63,7 +64,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -297,7 +297,7 @@
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button2.Location = new System.Drawing.Point(536, 7);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(132, 33);
+            this.button2.Size = new System.Drawing.Size(139, 33);
             this.button2.TabIndex = 12;
             this.button2.Text = "Refresh";
             this.button2.UseVisualStyleBackColor = false;
@@ -332,6 +332,14 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(628, 276);
             this.panel1.TabIndex = 0;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(226, 72);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(237, 20);
+            this.dateTimePicker1.TabIndex = 13;
             // 
             // textDescription
             // 
@@ -427,14 +435,6 @@
             this.label2.Size = new System.Drawing.Size(100, 18);
             this.label2.TabIndex = 0;
             this.label2.Text = "EmpIoyee ID :";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(226, 72);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(237, 20);
-            this.dateTimePicker1.TabIndex = 13;
             // 
             // RequestPortal
             // 

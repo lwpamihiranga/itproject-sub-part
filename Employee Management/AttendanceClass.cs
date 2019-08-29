@@ -72,12 +72,12 @@ namespace Employee_Management
             DataTable dt = new DataTable();
 
             try
-            {
+            {/*
                 string sql = "SELECT EmpID,date,inTime,outTime  FROM Attendance";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
-                adapter.Fill(dt);
+                adapter.Fill(dt);*/
             }
             catch (Exception e)
             {

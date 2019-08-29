@@ -29,8 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TabPage tabView;
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.EmpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ArrivedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LeftTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabAttendance = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -42,33 +48,101 @@
             this.lblMonth = new System.Windows.Forms.Label();
             this.tabInsert = new System.Windows.Forms.TabPage();
             this.txtLeavingTime = new System.Windows.Forms.TextBox();
-            this.txtArrivingTime = new System.Windows.Forms.TextBox();
+            this.txtArrivedTime = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.lblLeavingTme = new System.Windows.Forms.Label();
-            this.lblArrivingTime = new System.Windows.Forms.Label();
+            this.lblLeftTme = new System.Windows.Forms.Label();
+            this.lblArrivedTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.lblEmployeeId = new System.Windows.Forms.Label();
             this.ssss = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.EmpId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ArrivedTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LeftTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             tabView = new System.Windows.Forms.TabPage();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            tabView.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.tabInsert.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ssss)).BeginInit();
-            tabView.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // tabView
+            // 
+            tabView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            tabView.Controls.Add(this.dataGridView1);
+            tabView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tabView.Location = new System.Drawing.Point(4, 27);
+            tabView.Name = "tabView";
+            tabView.Size = new System.Drawing.Size(672, 312);
+            tabView.TabIndex = 2;
+            tabView.Text = "View Attendance";
+            tabView.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.EmpId,
+            this.Date,
+            this.ArrivedTime,
+            this.LeftTime,
+            this.Edit,
+            this.Delete});
+            this.dataGridView1.Location = new System.Drawing.Point(3, 14);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(644, 215);
+            this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // EmpId
+            // 
+            this.EmpId.DataPropertyName = "EmpID";
+            this.EmpId.HeaderText = "EmpId";
+            this.EmpId.Name = "EmpId";
+            this.EmpId.ReadOnly = true;
+            this.EmpId.Width = 75;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "date";
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // ArrivedTime
+            // 
+            this.ArrivedTime.DataPropertyName = "inTime";
+            this.ArrivedTime.HeaderText = "Arrived Time";
+            this.ArrivedTime.Name = "ArrivedTime";
+            this.ArrivedTime.ReadOnly = true;
+            this.ArrivedTime.Width = 125;
+            // 
+            // LeftTime
+            // 
+            this.LeftTime.DataPropertyName = "outTime";
+            this.LeftTime.HeaderText = "Left Time";
+            this.LeftTime.Name = "LeftTime";
+            this.LeftTime.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            this.Edit.HeaderText = "EDIT";
+            this.Edit.Name = "Edit";
+            this.Edit.ReadOnly = true;
+            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "DELETE";
+            this.Delete.Name = "Delete";
+            this.Delete.ReadOnly = true;
+            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // label1
             // 
@@ -80,17 +154,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Attendance";
             this.label1.Click += new System.EventHandler(this.Label1_Click);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Employee_Management.Properties.Resources.WhatsApp_Image_2019_08_27_at_11_251;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(124, 159);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
             // tabControl1
             // 
@@ -106,6 +169,7 @@
             // 
             // tabAttendance
             // 
+            this.tabAttendance.BackColor = System.Drawing.Color.Transparent;
             this.tabAttendance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabAttendance.Controls.Add(this.pictureBox1);
             this.tabAttendance.Controls.Add(this.panel1);
@@ -115,11 +179,11 @@
             this.tabAttendance.Size = new System.Drawing.Size(672, 312);
             this.tabAttendance.TabIndex = 0;
             this.tabAttendance.Text = "Attendance";
-            this.tabAttendance.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox1.Image = global::Employee_Management.Properties.Resources.garment1;
             this.pictureBox1.Location = new System.Drawing.Point(30, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(285, 214);
@@ -129,7 +193,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.btnGenerate);
             this.panel1.Controls.Add(this.lblYear);
@@ -143,12 +207,13 @@
             // 
             // btnGenerate
             // 
+            this.btnGenerate.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnGenerate.Location = new System.Drawing.Point(48, 141);
             this.btnGenerate.Name = "btnGenerate";
             this.btnGenerate.Size = new System.Drawing.Size(209, 33);
             this.btnGenerate.TabIndex = 5;
             this.btnGenerate.Text = "Generate Report";
-            this.btnGenerate.UseVisualStyleBackColor = true;
+            this.btnGenerate.UseVisualStyleBackColor = false;
             // 
             // lblYear
             // 
@@ -211,24 +276,24 @@
             // 
             // tabInsert
             // 
+            this.tabInsert.BackColor = System.Drawing.Color.Transparent;
             this.tabInsert.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabInsert.Controls.Add(this.txtLeavingTime);
-            this.tabInsert.Controls.Add(this.txtArrivingTime);
+            this.tabInsert.Controls.Add(this.txtArrivedTime);
             this.tabInsert.Controls.Add(this.dateTimePicker1);
             this.tabInsert.Controls.Add(this.txtEmployeeId);
             this.tabInsert.Controls.Add(this.btnInsert);
-            this.tabInsert.Controls.Add(this.lblLeavingTme);
-            this.tabInsert.Controls.Add(this.lblArrivingTime);
+            this.tabInsert.Controls.Add(this.lblLeftTme);
+            this.tabInsert.Controls.Add(this.lblArrivedTime);
             this.tabInsert.Controls.Add(this.lblDate);
             this.tabInsert.Controls.Add(this.lblEmployeeId);
             this.tabInsert.Controls.Add(this.ssss);
             this.tabInsert.Location = new System.Drawing.Point(4, 27);
             this.tabInsert.Name = "tabInsert";
             this.tabInsert.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInsert.Size = new System.Drawing.Size(669, 312);
+            this.tabInsert.Size = new System.Drawing.Size(672, 312);
             this.tabInsert.TabIndex = 1;
             this.tabInsert.Text = "Insert Attendance";
-            this.tabInsert.UseVisualStyleBackColor = true;
             // 
             // txtLeavingTime
             // 
@@ -237,12 +302,12 @@
             this.txtLeavingTime.Size = new System.Drawing.Size(200, 24);
             this.txtLeavingTime.TabIndex = 9;
             // 
-            // txtArrivingTime
+            // txtArrivedTime
             // 
-            this.txtArrivingTime.Location = new System.Drawing.Point(287, 138);
-            this.txtArrivingTime.Name = "txtArrivingTime";
-            this.txtArrivingTime.Size = new System.Drawing.Size(200, 24);
-            this.txtArrivingTime.TabIndex = 8;
+            this.txtArrivedTime.Location = new System.Drawing.Point(287, 138);
+            this.txtArrivedTime.Name = "txtArrivedTime";
+            this.txtArrivedTime.Size = new System.Drawing.Size(200, 24);
+            this.txtArrivedTime.TabIndex = 8;
             // 
             // dateTimePicker1
             // 
@@ -261,32 +326,34 @@
             // 
             // btnInsert
             // 
+            this.btnInsert.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnInsert.Location = new System.Drawing.Point(152, 226);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(335, 26);
             this.btnInsert.TabIndex = 5;
             this.btnInsert.Text = "INSERT";
-            this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.UseVisualStyleBackColor = false;
+            this.btnInsert.Click += new System.EventHandler(this.BtnInsert_Click);
             // 
-            // lblLeavingTme
+            // lblLeftTme
             // 
-            this.lblLeavingTme.AutoSize = true;
-            this.lblLeavingTme.BackColor = System.Drawing.Color.White;
-            this.lblLeavingTme.Location = new System.Drawing.Point(149, 176);
-            this.lblLeavingTme.Name = "lblLeavingTme";
-            this.lblLeavingTme.Size = new System.Drawing.Size(99, 18);
-            this.lblLeavingTme.TabIndex = 4;
-            this.lblLeavingTme.Text = "Leaving Time:";
+            this.lblLeftTme.AutoSize = true;
+            this.lblLeftTme.BackColor = System.Drawing.Color.White;
+            this.lblLeftTme.Location = new System.Drawing.Point(149, 176);
+            this.lblLeftTme.Name = "lblLeftTme";
+            this.lblLeftTme.Size = new System.Drawing.Size(73, 18);
+            this.lblLeftTme.TabIndex = 4;
+            this.lblLeftTme.Text = "Left Time:";
             // 
-            // lblArrivingTime
+            // lblArrivedTime
             // 
-            this.lblArrivingTime.AutoSize = true;
-            this.lblArrivingTime.BackColor = System.Drawing.Color.White;
-            this.lblArrivingTime.Location = new System.Drawing.Point(149, 138);
-            this.lblArrivingTime.Name = "lblArrivingTime";
-            this.lblArrivingTime.Size = new System.Drawing.Size(97, 18);
-            this.lblArrivingTime.TabIndex = 3;
-            this.lblArrivingTime.Text = "Arriving Time:";
+            this.lblArrivedTime.AutoSize = true;
+            this.lblArrivedTime.BackColor = System.Drawing.Color.White;
+            this.lblArrivedTime.Location = new System.Drawing.Point(149, 138);
+            this.lblArrivedTime.Name = "lblArrivedTime";
+            this.lblArrivedTime.Size = new System.Drawing.Size(94, 18);
+            this.lblArrivedTime.TabIndex = 3;
+            this.lblArrivedTime.Text = "Arrived Time:";
             // 
             // lblDate
             // 
@@ -311,6 +378,7 @@
             // ssss
             // 
             this.ssss.BackColor = System.Drawing.Color.Transparent;
+            this.ssss.Image = global::Employee_Management.Properties.Resources.frame2;
             this.ssss.Location = new System.Drawing.Point(93, 28);
             this.ssss.Name = "ssss";
             this.ssss.Size = new System.Drawing.Size(474, 260);
@@ -318,78 +386,16 @@
             this.ssss.TabIndex = 0;
             this.ssss.TabStop = false;
             // 
-            // tabView
+            // pictureBox3
             // 
-            tabView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            tabView.Controls.Add(this.dataGridView1);
-            tabView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tabView.Location = new System.Drawing.Point(4, 27);
-            tabView.Name = "tabView";
-            tabView.Size = new System.Drawing.Size(669, 312);
-            tabView.TabIndex = 2;
-            tabView.Text = "View Attendance";
-            tabView.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EmpId,
-            this.Date,
-            this.ArrivedTime,
-            this.LeftTime,
-            this.Edit,
-            this.Delete});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 14);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 215);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // EmpId
-            // 
-            this.EmpId.DataPropertyName = "EmpID";
-            this.EmpId.HeaderText = "EmpId";
-            this.EmpId.Name = "EmpId";
-            this.EmpId.ReadOnly = true;
-            this.EmpId.Width = 75;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "date";
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
-            // 
-            // ArrivedTime
-            // 
-            this.ArrivedTime.DataPropertyName = "inTime";
-            this.ArrivedTime.HeaderText = "Arrived Time";
-            this.ArrivedTime.Name = "ArrivedTime";
-            this.ArrivedTime.ReadOnly = true;
-            this.ArrivedTime.Width = 125;
-            // 
-            // LeftTime
-            // 
-            this.LeftTime.DataPropertyName = "outTime";
-            this.LeftTime.HeaderText = "Left Time";
-            this.LeftTime.Name = "LeftTime";
-            this.LeftTime.ReadOnly = true;
-            // 
-            // Edit
-            // 
-            this.Edit.HeaderText = "EDIT";
-            this.Edit.Name = "Edit";
-            this.Edit.ReadOnly = true;
-            this.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Edit.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "DELETE";
-            this.Delete.Name = "Delete";
-            this.Delete.ReadOnly = true;
-            this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.pictureBox3.Image = global::Employee_Management.Properties.Resources.WhatsApp_Image_2019_08_27_at_11_251;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(124, 159);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
             // Attendance
             // 
@@ -401,7 +407,8 @@
             this.Controls.Add(this.label1);
             this.Name = "Attendance";
             this.Size = new System.Drawing.Size(683, 508);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            tabView.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabAttendance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -410,8 +417,7 @@
             this.tabInsert.ResumeLayout(false);
             this.tabInsert.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ssss)).EndInit();
-            tabView.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,12 +438,12 @@
         private System.Windows.Forms.Label lblMonth;
         private System.Windows.Forms.TabPage tabInsert;
         private System.Windows.Forms.TextBox txtLeavingTime;
-        private System.Windows.Forms.TextBox txtArrivingTime;
+        private System.Windows.Forms.TextBox txtArrivedTime;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox txtEmployeeId;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Label lblLeavingTme;
-        private System.Windows.Forms.Label lblArrivingTime;
+        private System.Windows.Forms.Label lblLeftTme;
+        private System.Windows.Forms.Label lblArrivedTime;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblEmployeeId;
         private System.Windows.Forms.PictureBox ssss;

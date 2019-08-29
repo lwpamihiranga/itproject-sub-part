@@ -14,7 +14,7 @@ namespace Employee_Management
     public partial class EditRequestPopupWindow : Form
     {
 
-        sendRequest ob = new sendRequest();
+        DatabaseHelper dbhelper = new DatabaseHelper();
         public EditRequestPopupWindow()
         {
             InitializeComponent();
@@ -23,7 +23,7 @@ namespace Employee_Management
         private void EditRequestPopupWindow_Load(object sender, EventArgs e)
         {
             int id = RequestPortal.editRequestID;
-            DataTable dt = ob.getRequestDetails(id);
+            DataTable dt = dbhelper.getRequestDetails(id);
 
             foreach (DataRow row in dt.Rows)
             {

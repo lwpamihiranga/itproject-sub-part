@@ -22,8 +22,10 @@ namespace Employee_Management
 
         private void EditRequestPopupWindow_Load(object sender, EventArgs e)
         {
-            int id = RequestPortal.editRequestID;
-            DataTable dt = dbhelper.getRequestDetails(id);
+            
+             int id = RequestPortal.editRequestID;
+             DataTable dt = dbhelper.getRequestDetails(id);
+       
 
             foreach (DataRow row in dt.Rows)
             {
@@ -39,6 +41,11 @@ namespace Employee_Management
             }
 
             
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
 
         }
     }

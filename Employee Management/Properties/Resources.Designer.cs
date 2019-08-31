@@ -214,6 +214,16 @@ namespace Employee_Management.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap searchIcon {
+            get {
+                object obj = ResourceManager.GetObject("searchIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap stopwatch_glyph_icon_measure_and_countdown_timer_vector_25053185 {
             get {
                 object obj = ResourceManager.GetObject("stopwatch-glyph-icon-measure-and-countdown-timer-vector-25053185", resourceCulture);

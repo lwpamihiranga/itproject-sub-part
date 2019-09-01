@@ -62,31 +62,53 @@ namespace Employee_Management
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
-
-            a.EmployeeId = Int32.Parse(txtEmployeeId.Text);
-            a.Date = dateTimePicker1.Text;
-            a.ArrivedTime = txtArrivedTime.Text;
-            // a.LeftTime = int.Parse(txtLeaftTime.Text);
-
-            /* Type dataType = a.EmployeeId.GetType();
-             if (!dataType.Equals(typeof(int)))
-             {
-                 MessageBox.Show("Invalid Employee Id");
-             }
-             */
-
-            bool success = a.Insert(a);
-            if (success == true)
+            if (txtEmployeeId.Text == string.Empty && txtArrivedTime.Text == string.Empty)
             {
-                MessageBox.Show("Successfully inserted");
+                MessageBox.Show("Plaese fill the empty fields!");
             }
+            else if (txtEmployeeId.Text == string.Empty)
+            {                              
+                 MessageBox.Show("Please enter an Employee Id!");
+            }
+            else if(txtArrivedTime.Text == string.Empty)
+            {
+                MessageBox.Show("Plaese enter the arrived time");
+
+            }
+           
+
+
+                  
+            
+
             else
             {
-                MessageBox.Show("Cannot insert");
-            }
 
-            DataTable dt = a.Select();
-            dataGridView.DataSource = dt;
+                a.EmployeeId = Int32.Parse(txtEmployeeId.Text);
+                a.Date = dateTimePicker1.Text;
+                a.ArrivedTime = txtArrivedTime.Text;
+                // a.LeftTime = int.Parse(txtLeaftTime.Text);
+
+                /* Type dataType = a.EmployeeId.GetType();
+                 if (!dataType.Equals(typeof(int)))
+                 {
+                     MessageBox.Show("Invalid Employee Id");
+                 }
+                 */
+
+                bool success = a.Insert(a);
+                if (success == true)
+                {
+                    MessageBox.Show("Successfully inserted");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot insert");
+                }
+
+                DataTable dt = a.Select();
+                dataGridView.DataSource = dt;
+            }
         }
         private void TabView_Click(object sender, EventArgs e)
         {
@@ -135,7 +157,7 @@ namespace Employee_Management
 
         private void TxtEmployeeId_TextChanged(object sender, EventArgs e)
         {
-
+           
 
 
         }
@@ -177,6 +199,17 @@ namespace Employee_Management
         {
 
         }
-        
+
+        private void BtnGenerate_Click(object sender, EventArgs e)
+        {
+            if (txtYear.Text == string.Empty)
+            {
+                MessageBox.Show("Plaese enter the year!");
+            }
+            else if(comboMonth.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a month!");
+            }
+        }
     }
 }

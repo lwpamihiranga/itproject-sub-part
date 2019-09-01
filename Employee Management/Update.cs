@@ -21,15 +21,22 @@ namespace Employee_Management
         AttendanceClass a = new AttendanceClass();
         private void Button1_Click(object sender, EventArgs e)
         {
-            
-            a.EmployeeId = Int32.Parse(txtUpdateEmployeeId.Text);
-            a.Date = dateTimePickerUpdate.Text;
-            //a.ArrivedTime = int.Parse(txtUpdateArrivedTime.Text);
-            a.ArrivedTime = txtUpdateArrivedTime.Text;
-            a.LeftTime = txtUpdateLeftTime.Text;
-            
+            if(txtUpdateLeftTime.Text == string.Empty)
+            {
+                a.EmployeeId = Int32.Parse(txtUpdateEmployeeId.Text);
+                a.Date = dateTimePickerUpdate.Text;
+                a.ArrivedTime = txtUpdateArrivedTime.Text;
+            }
+            else
+            {
+                a.EmployeeId = Int32.Parse(txtUpdateEmployeeId.Text);
+                a.Date = dateTimePickerUpdate.Text;
+                a.ArrivedTime = txtUpdateArrivedTime.Text;
+                a.LeftTime = txtUpdateLeftTime.Text;
+            }
 
-             bool success = a.Update(a);
+
+            bool success = a.Update(a);
             
             if (success == true)
             {

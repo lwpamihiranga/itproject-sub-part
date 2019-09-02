@@ -11,18 +11,18 @@ namespace Employee_Management
 {
     class AttendanceClass
     {
-        
+
         public int AttendId;
 
         public int EmployeeId;
 
         public string Date;
 
-        public int ArrivedTime;
+        public string ArrivedTime;
 
-        public int LeftTime;
+        public string LeftTime;
 
-      
+
 
         static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
 
@@ -38,6 +38,7 @@ namespace Employee_Management
                 string sql = "INSERT INTO Attendance(EmpID,date,inTime) VALUES (@EmpID,@date,@inTime)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
+                cmd.Parameters.AddWithValue("@AttendID", a.AttendId);
                 cmd.Parameters.AddWithValue("@EmpID", a.EmployeeId);
                 cmd.Parameters.AddWithValue("@date", a.Date);
                 cmd.Parameters.AddWithValue("@inTime", a.ArrivedTime);
@@ -46,7 +47,7 @@ namespace Employee_Management
                 int rows = cmd.ExecuteNonQuery();
                 if (rows > 0)
                 {
-                    isSuccess = true;       
+                    isSuccess = true;
                 }
                 else
                 {
@@ -86,7 +87,7 @@ namespace Employee_Management
             finally
             {
                 conn.Close();
-                
+
             }
             return dt;
         }
@@ -115,7 +116,7 @@ namespace Employee_Management
                 if (rows > 0)
                 {
                     isSuccess = true;
-                    
+
                 }
                 else
                 {
@@ -133,7 +134,7 @@ namespace Employee_Management
             return isSuccess;
         }
 
-    public bool Delete(AttendanceClass a)
+        public bool Delete(int id)
         {
             bool isSuccess = false;
 
@@ -144,7 +145,10 @@ namespace Employee_Management
                 string sql = "DELETE FROM Attendance WHERE AttendID=@AttendID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-                cmd.Parameters.AddWithValue("@AttendId", a.AttendId);
+
+
+
+                cmd.Parameters.AddWithValue("@AttendID", id);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -157,9 +161,9 @@ namespace Employee_Management
                 {
                     isSuccess = false;
                 }
-            
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
 
             }
@@ -170,8 +174,68 @@ namespace Employee_Management
             return isSuccess;
         }
 
+        public int GetAttendId(int index)
+         {
+            /*
+             SqlConnection conn = new SqlConnection(myConnectionString);
+
+             int check = 0;
+             DataTable dt = Select();
+
+             while (check == index)
+             {
+                 /*conn.Open();
+
+                 SqlCommand cmd3 = new SqlCommand("SELECT AttendID FROM Attendance WHERE AttendID=@AttendID ", conn);
+                 cmd3.Parameters.AddWithValue("@AttendID", index);
+
+
+                 SqlDataReader reader = cmd3.ExecuteReader();
+                 while (reader.Read())
+                 {
+                    int AttendId = Convert.ToInt32(cmd3.Parameters["@AttendID"].Value);
+
+                 }
+                 */
+        /* int AttendId = int.Parse(row["AttendID"].ToString());
+        if (check == index)
+        {
+            return AttendId;
+        }
+        else
+        {
+            check++;
+        }
+        */
+
+        //conn.Close();
+        /* string sql = "SELECT AttendID FROM Attendance WHERE AttendID=@AttendID";
+         using(var command= new SqlCommand(sql, conn)) 
+         {
+             conn.Open();
+             command.Parameters.AddWithValue("@AttendID", index);
+             using (var reader = command.ExecuteReader())
+             {
+                 // AttendId = reader.GetInt32(0);
+                 if (reader.Read())
+                 {
+                     AttendId = Convert.ToInt32(reader["AttendID"].ToString());
+                 }
+
+             }
+         }
+
+
+    */
+        return 0;
+
+   
+        //}
+
     }
-    
+
+
+    }
 }
 
 

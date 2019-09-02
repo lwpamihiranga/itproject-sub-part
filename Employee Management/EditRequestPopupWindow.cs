@@ -32,7 +32,7 @@ namespace Employee_Management
                 string name = row["ReqID"].ToString();
                 txtID.Text = row["EmpID"].ToString();
 
-                dateTimePicker1.Text = "2018 / 09 / 05";
+                dateTimePicker1.Text = row["Date"].ToString();
 
                 txtHours.Text = row["LeaveHours"].ToString();
                 txtDepartment.Text = row["Department"].ToString();

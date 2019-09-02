@@ -215,10 +215,11 @@ namespace Employee_Management
             
 
 
-        }   
+        }
 
+        private void TabPage1_Click(object sender, EventArgs e)
+        {
 
-
-
+        }
     }
 }

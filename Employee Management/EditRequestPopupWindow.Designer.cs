@@ -56,30 +56,33 @@
             // 
             // txtDepartment
             // 
+            this.txtDepartment.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDepartment.Location = new System.Drawing.Point(248, 129);
             this.txtDepartment.Name = "txtDepartment";
-            this.txtDepartment.Size = new System.Drawing.Size(237, 20);
+            this.txtDepartment.Size = new System.Drawing.Size(237, 24);
             this.txtDepartment.TabIndex = 20;
             // 
             // txtHours
             // 
+            this.txtHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHours.Location = new System.Drawing.Point(248, 94);
             this.txtHours.Name = "txtHours";
-            this.txtHours.Size = new System.Drawing.Size(237, 20);
+            this.txtHours.Size = new System.Drawing.Size(237, 24);
             this.txtHours.TabIndex = 18;
             // 
             // txtID
             // 
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(248, 29);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(237, 20);
+            this.txtID.Size = new System.Drawing.Size(237, 24);
             this.txtID.TabIndex = 17;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(88, 128);
+            this.label6.Location = new System.Drawing.Point(88, 129);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(93, 18);
             this.label6.TabIndex = 16;
@@ -89,7 +92,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(88, 164);
+            this.label5.Location = new System.Drawing.Point(88, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 18);
             this.label5.TabIndex = 15;
@@ -117,18 +120,20 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(248, 165);
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(248, 161);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(237, 78);
+            this.txtDescription.Size = new System.Drawing.Size(237, 84);
             this.txtDescription.TabIndex = 23;
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(248, 63);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(237, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(237, 24);
             this.dateTimePicker1.TabIndex = 25;
             // 
             // label3

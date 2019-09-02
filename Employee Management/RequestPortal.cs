@@ -221,5 +221,10 @@ namespace Employee_Management
         {
 
         }
+
+        private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceReport));
             this.dataGridViewReport = new System.Windows.Forms.DataGridView();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,32 +50,34 @@
             // dataGridViewReport
             // 
             this.dataGridViewReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewReport.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewReport.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewReport.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Date,
             this.EmployeeId,
             this.ArrivedTime,
             this.LeftTime});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewReport.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewReport.Location = new System.Drawing.Point(40, 75);
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewReport.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridViewReport.Location = new System.Drawing.Point(39, 66);
             this.dataGridViewReport.Name = "dataGridViewReport";
             this.dataGridViewReport.Size = new System.Drawing.Size(636, 215);
             this.dataGridViewReport.TabIndex = 0;
+            this.dataGridViewReport.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewReport_CellContentClick);
             // 
             // Date
             // 
@@ -109,7 +111,7 @@
             // 
             this.dateTimePickerSearchReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerSearchReport.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerSearchReport.Location = new System.Drawing.Point(385, 41);
+            this.dateTimePickerSearchReport.Location = new System.Drawing.Point(384, 32);
             this.dateTimePickerSearchReport.Name = "dateTimePickerSearchReport";
             this.dateTimePickerSearchReport.Size = new System.Drawing.Size(200, 24);
             this.dateTimePickerSearchReport.TabIndex = 12;
@@ -119,7 +121,7 @@
             this.lblSearchByDateReport.AutoSize = true;
             this.lblSearchByDateReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchByDateReport.ForeColor = System.Drawing.Color.Black;
-            this.lblSearchByDateReport.Location = new System.Drawing.Point(336, 45);
+            this.lblSearchByDateReport.Location = new System.Drawing.Point(335, 36);
             this.lblSearchByDateReport.Name = "lblSearchByDateReport";
             this.lblSearchByDateReport.Size = new System.Drawing.Size(43, 18);
             this.lblSearchByDateReport.TabIndex = 11;
@@ -130,7 +132,7 @@
             this.lblSearchByEmpIdReport.AutoSize = true;
             this.lblSearchByEmpIdReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchByEmpIdReport.ForeColor = System.Drawing.Color.Black;
-            this.lblSearchByEmpIdReport.Location = new System.Drawing.Point(37, 41);
+            this.lblSearchByEmpIdReport.Location = new System.Drawing.Point(36, 32);
             this.lblSearchByEmpIdReport.Name = "lblSearchByEmpIdReport";
             this.lblSearchByEmpIdReport.Size = new System.Drawing.Size(93, 18);
             this.lblSearchByEmpIdReport.TabIndex = 10;
@@ -141,7 +143,7 @@
             this.btnSearchReport.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSearchReport.Image = ((System.Drawing.Image)(resources.GetObject("btnSearchReport.Image")));
             this.btnSearchReport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearchReport.Location = new System.Drawing.Point(604, 39);
+            this.btnSearchReport.Location = new System.Drawing.Point(603, 30);
             this.btnSearchReport.Name = "btnSearchReport";
             this.btnSearchReport.Size = new System.Drawing.Size(72, 30);
             this.btnSearchReport.TabIndex = 9;
@@ -153,7 +155,7 @@
             this.txtSearchReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearchReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchReport.ForeColor = System.Drawing.Color.Black;
-            this.txtSearchReport.Location = new System.Drawing.Point(139, 39);
+            this.txtSearchReport.Location = new System.Drawing.Point(138, 30);
             this.txtSearchReport.Multiline = true;
             this.txtSearchReport.Name = "txtSearchReport";
             this.txtSearchReport.Size = new System.Drawing.Size(169, 22);
@@ -161,7 +163,7 @@
             // 
             // panelReport
             // 
-            this.panelReport.BackColor = System.Drawing.Color.White;
+            this.panelReport.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panelReport.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelReport.Controls.Add(this.btnViewAll);
             this.panelReport.Controls.Add(this.dateTimePickerSearchReport);
@@ -170,7 +172,7 @@
             this.panelReport.Controls.Add(this.lblSearchByDateReport);
             this.panelReport.Controls.Add(this.btnSearchReport);
             this.panelReport.Controls.Add(this.lblSearchByEmpIdReport);
-            this.panelReport.Location = new System.Drawing.Point(46, 66);
+            this.panelReport.Location = new System.Drawing.Point(38, 43);
             this.panelReport.Name = "panelReport";
             this.panelReport.Size = new System.Drawing.Size(726, 363);
             this.panelReport.TabIndex = 13;
@@ -180,7 +182,7 @@
             this.btnViewAll.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnViewAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewAll.ForeColor = System.Drawing.Color.White;
-            this.btnViewAll.Location = new System.Drawing.Point(40, 314);
+            this.btnViewAll.Location = new System.Drawing.Point(39, 305);
             this.btnViewAll.Name = "btnViewAll";
             this.btnViewAll.Size = new System.Drawing.Size(636, 27);
             this.btnViewAll.TabIndex = 13;
@@ -192,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panelReport);
             this.Name = "AttendanceReport";

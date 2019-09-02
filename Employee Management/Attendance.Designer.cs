@@ -83,6 +83,7 @@
             // 
             // tabView
             // 
+            tabView.BackColor = System.Drawing.Color.WhiteSmoke;
             tabView.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             tabView.Controls.Add(this.dateTimePickerSearch);
             tabView.Controls.Add(this.lblSearchByDate);
@@ -98,7 +99,6 @@
             tabView.Size = new System.Drawing.Size(672, 312);
             tabView.TabIndex = 2;
             tabView.Text = "View Attendance";
-            tabView.UseVisualStyleBackColor = true;
             tabView.Click += new System.EventHandler(this.TabView_Click);
             // 
             // dateTimePickerSearch
@@ -259,11 +259,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(303, 28);
+            this.label1.Location = new System.Drawing.Point(282, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 31);
+            this.label1.Size = new System.Drawing.Size(162, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "Attendance";
             this.label1.Click += new System.EventHandler(this.Label1_Click);

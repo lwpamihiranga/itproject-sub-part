@@ -37,9 +37,11 @@
             // Label
             // 
             this.Label.AutoSize = true;
-            this.Label.Location = new System.Drawing.Point(294, 230);
+            this.Label.BackColor = System.Drawing.Color.Transparent;
+            this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Label.Location = new System.Drawing.Point(100, 244);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(30, 13);
+            this.Label.Size = new System.Drawing.Size(99, 39);
             this.Label.TabIndex = 0;
             this.Label.Text = "Time";
             // 

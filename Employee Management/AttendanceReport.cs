@@ -49,5 +49,10 @@ namespace Employee_Management
             DataTable dt = a.Select();
             dataGridViewReport.DataSource = dt;
         }
+
+        private void DataGridViewReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

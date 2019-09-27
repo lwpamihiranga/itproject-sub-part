@@ -59,7 +59,7 @@ namespace Employee_Management
         }
 
         AttendanceClass a = new AttendanceClass();
-        int Id = 0;
+
         private void BtnInsert_Click(object sender, EventArgs e)
         {
             if (txtEmployeeId.Text == string.Empty && txtArrivedTime.Text == string.Empty)
@@ -74,11 +74,6 @@ namespace Employee_Management
             {
                 MessageBox.Show("Plaese enter the arrived time");
 
-            }
-            
-            else if (!int.TryParse(txtEmployeeId.Text,out Id))
-            {
-                MessageBox.Show("Employee ID is invaid");
             }
            
 

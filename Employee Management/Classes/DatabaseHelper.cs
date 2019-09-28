@@ -1,8 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +30,7 @@ namespace Employee_Management.Classes
 
             try
             {
-                string sql = "INSERT INTO LeaveRequests(EmpID,Date,LeaveHours,Description,Department) VALUES(@EmpID,@Date,@LeaveHours,@Description,@Department)";
+                string sql = "INSERT INTO LeaveRequests(EmpID,Date,LeaveHours,Description,Department,Status) VALUES(@EmpID,@Date,@LeaveHours,@Description,@Department,@Status)";
 
                 SqlCommand cmd = new SqlCommand(sql, c);
                 cmd.Parameters.AddWithValue("@EmpID", id);
@@ -35,6 +38,7 @@ namespace Employee_Management.Classes
                 cmd.Parameters.AddWithValue("@Description", description);
                 cmd.Parameters.AddWithValue("@Department", department);
                 cmd.Parameters.AddWithValue("@Date", date);
+                cmd.Parameters.AddWithValue("@Status", "Pending");
 
                 c.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -252,6 +256,55 @@ namespace Employee_Management.Classes
                 c.Close();
             }
             return isSuccess;
+        }
+        public bool createPDF(DataTable dataTable, string destinationPath)
+        {
+           try
+            {
+                Document document = new Document();
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(destinationPath, FileMode.Create));
+                document.Open();
+
+                PdfPTable table = new PdfPTable(dataTable.Columns.Count);
+                table.WidthPercentage = 100;
+
+                //Set columns names in the pdf file
+                for (int k = 0; k < dataTable.Columns.Count; k++)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(dataTable.Columns[k].ColumnName));
+
+                    cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                    cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(51, 102, 102);
+
+                    table.AddCell(cell);
+                }
+
+                //Add values of DataTable in pdf file
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataTable.Columns.Count; j++)
+                    {
+                        PdfPCell cell = new PdfPCell(new Phrase(dataTable.Rows[i][j].ToString()));
+
+                        //Align the cell in the center
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+
+                        table.AddCell(cell);
+                    }
+                }
+
+                document.Add(table);
+                document.Close();
+
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
 

@@ -67,6 +67,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView)).BeginInit();
             this.Reports.SuspendLayout();
@@ -472,12 +473,23 @@
             this.crystalReportViewer1.TabIndex = 13;
             this.crystalReportViewer1.Load += new System.EventHandler(this.CrystalReportViewer1_Load);
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(529, 110);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 13;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            // 
             // RequestPortal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.Reports);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.pictureBox3);
@@ -534,5 +546,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn Delete;
         private System.Windows.Forms.TabPage tabPage3;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.Button button4;
     }
 }

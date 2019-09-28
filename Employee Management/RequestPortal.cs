@@ -242,5 +242,19 @@ namespace Employee_Management
         {
 
         }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            DataTable dt = dbhelper.Select();
+            DatabaseHelper helper = new DatabaseHelper();
+            if(helper.createPDF(dt, "G:\\SQL LITE DATABSE\\report.pdf"))
+            {
+                MessageBox.Show("Report was saved as G:\\SQL LITE DATABSE\\report.pdf");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong!");
+            }
+        }
     }
 }

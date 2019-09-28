@@ -218,6 +218,98 @@ namespace Employee_Management.Classes
             }
             return dt;
         }
+        public DataTable getRequestDetailsByEmpID(String id)
+        {
+            string conn = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            SqlConnection c = new SqlConnection(conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT ReqID,EmpID,Date,LeaveHours,Description,Department,Status FROM LeaveRequests WHERE EmpID = '" + id + "'";
+                SqlCommand cmd = new SqlCommand(sql, c);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                c.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                c.Close();
+            }
+            return dt;
+        }
+        public DataTable getRequestDetailsByDate(String date)
+        {
+            string conn = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            SqlConnection c = new SqlConnection(conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT ReqID,EmpID,Date,LeaveHours,Description,Department,Status FROM LeaveRequests WHERE Date= '" + date + "'";
+                SqlCommand cmd = new SqlCommand(sql, c);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                c.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                c.Close();
+            }
+            return dt;
+        }
+        public DataTable getRequestDetailsByARange(String startDate,String endDate)
+        {
+            string conn = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            SqlConnection c = new SqlConnection(conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT ReqID,EmpID,Date,LeaveHours,Description,Department,Status FROM LeaveRequests WHERE Date >= '" + startDate + "'" + " AND Date <= '" + endDate + "'";
+                SqlCommand cmd = new SqlCommand(sql, c);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                c.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                c.Close();
+            }
+            return dt;
+        }
+        public DataTable getRequestDetailsByDateAndDept(String date, String dept)
+        {
+            string conn = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            SqlConnection c = new SqlConnection(conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT ReqID,EmpID,Date,LeaveHours,Description,Department,Status FROM LeaveRequests WHERE Date = '" + date + "'" + " AND Department = '" + dept + "'";
+                SqlCommand cmd = new SqlCommand(sql, c);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                c.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                c.Close();
+            }
+            return dt;
+        }
         public bool update(int id,string empid,string date,string department,string description,int hours)
         {
             string conn = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;

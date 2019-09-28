@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Employee_Management.Classes;
+using System.Threading;
 
 namespace Employee_Management
 {
@@ -17,6 +18,7 @@ namespace Employee_Management
         static int numberOfRows = 0;
         public static bool isSearchEnabled = false;
         public static int editRequestID = 0;
+        static DataTable downloadingDataTable = null;
 
         DatabaseHelper dbhelper = new DatabaseHelper();
         
@@ -33,7 +35,19 @@ namespace Employee_Management
         private void RequestPortal_Load(object sender, EventArgs e)
         {
 
-            
+
+            System.Threading.Tasks.Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    Thread.Sleep(250);
+                    this.Invoke(new Action(() =>
+                       setVisibility()));
+                }
+
+            });
+
+
             DataTable dt = dbhelper.Select();
 
             numberOfRows = dbhelper.getNumberOfRows();
@@ -42,6 +56,32 @@ namespace Employee_Management
 
 
             gridView.DataSource = dt;
+        }
+        public void setVisibility()
+        {
+            String s = comboBox1.Text;
+            if (s.Equals("Sort by Date"))
+            {
+                textBox3.Visible = false;
+                //textBox5.Text = "Enter Date";
+                
+              
+            }
+            if (s.Equals("Sort by EmployeeID"))
+            {
+                textBox3.Visible = false;
+                //textBox5.Text = "Enter ID";
+            }
+            if (s.Equals("Sort between a Range"))
+            {
+                textBox3.Visible = true;
+                //textBox5.Text = "End Date";
+               // textBox3.Text = "Starting Date";
+            }
+            if(s.Equals("Sort by Dept and Date"))
+            {
+                textBox3.Visible = true;
+            }
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -89,41 +129,12 @@ namespace Employee_Management
             }
             if (e.ColumnIndex == gridView.Columns["Delete"].Index && e.RowIndex >= 0)
             {
-                
-                if(!isSearchEnabled)
+                DialogResult result = MessageBox.Show("Do You Want to delete?", "Delete", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                if (result.Equals(DialogResult.OK))
                 {
-                    int id = dbhelper.getRequestId(e.RowIndex);
-                    if (numberOfRows == dbhelper.getNumberOfRows())
+                    if (!isSearchEnabled)
                     {
-                        if (dbhelper.deleteRow(id))
-                        {
-                            MessageBox.Show("Deleted Successfully!");
-                            DataTable dt = dbhelper.Select();
-                            gridView.DataSource = dt;
-                            numberOfRows = dbhelper.getNumberOfRows();
-
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Data was not Deleted Successfully!");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("You can't Delete a record right now because the table has been updated frequently!");
-                        DataTable dt = dbhelper.Select();
-                        gridView.DataSource = dt;
-                        numberOfRows = dbhelper.getNumberOfRows();
-                    }
-                }
-                else
-                {
-                    string it = ITNO.Text;
-                    if(!it.Equals(""))
-                    {
-                        
-                        int id = dbhelper.getRequestIdWhenSearching(it, e.RowIndex);
+                        int id = dbhelper.getRequestId(e.RowIndex);
                         if (numberOfRows == dbhelper.getNumberOfRows())
                         {
                             if (dbhelper.deleteRow(id))
@@ -148,8 +159,43 @@ namespace Employee_Management
                             numberOfRows = dbhelper.getNumberOfRows();
                         }
                     }
-                    
+                    else
+                    {
+                        string it = ITNO.Text;
+                        if (!it.Equals(""))
+                        {
+
+                            int id = dbhelper.getRequestIdWhenSearching(it, e.RowIndex);
+                            if (numberOfRows == dbhelper.getNumberOfRows())
+                            {
+                                if (dbhelper.deleteRow(id))
+                                {
+                                    MessageBox.Show("Deleted Successfully!");
+                                    DataTable dt = dbhelper.Select();
+                                    gridView.DataSource = dt;
+                                    numberOfRows = dbhelper.getNumberOfRows();
+
+
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Data was not Deleted Successfully!");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("You can't Delete a record right now because the table has been updated frequently!");
+                                DataTable dt = dbhelper.Select();
+                                gridView.DataSource = dt;
+                                numberOfRows = dbhelper.getNumberOfRows();
+                            }
+                        }
+
+                    }
                 }
+                
+
+
                
              
             }
@@ -251,9 +297,109 @@ namespace Employee_Management
 
         private void Button4_Click(object sender, EventArgs e)
         {
-            DataTable dt = dbhelper.Select();
+            
+        }
+
+        private void Button5_Click(object sender, EventArgs e)
+        {
+            String comboText = comboBox1.Text;
+            String text2 = textBox5.Text;
+            String text1 = textBox3.Text;
+
             DatabaseHelper helper = new DatabaseHelper();
-            if(helper.createPDF(dt, "G:\\SQL LITE DATABSE\\report.pdf"))
+
+
+            dataGridView2.DataSource = null;
+            downloadingDataTable = null;
+
+            if (comboText.Equals(""))
+            {
+                MessageBox.Show("Select the filter You want");
+                return;
+            }
+
+            if (comboText.Equals("Sort by Date"))
+            {
+                if(text2.Equals("") || text2.Equals("Enter Date"))
+                {
+                    MessageBox.Show("Enter a Date");
+                }
+                else
+                {
+                    DataTable dt = helper.getRequestDetailsByDate(text2);
+                    dataGridView2.DataSource = dt;
+                    downloadingDataTable = dt;
+
+                }
+            }
+            else if(comboText.Equals("Sort by EmployeeID"))
+            {
+                if (text2.Equals("") || text2.Equals("Enter ID"))
+                {
+                    MessageBox.Show("Enter a ID");
+                }
+                else
+                {
+                  
+                    DataTable dt = helper.getRequestDetailsByEmpID(text2);
+                    dataGridView2.DataSource = dt;
+                    downloadingDataTable = dt;
+                }
+            }
+            else if(comboText.Equals("Sort between a Range"))
+            {
+                if(text1.Equals("") || text1.Equals("Starting Date"))
+                {
+                    MessageBox.Show("Enter Starting Date");
+                }
+                else if (text2.Equals("") || text2.Equals("End Date"))
+                {
+                    MessageBox.Show("Enter End Date");
+                }
+                else
+                {
+                    DataTable dt = helper.getRequestDetailsByARange(text1, text2);
+                    dataGridView2.DataSource = dt;
+                    downloadingDataTable = dt;
+
+                }
+            }
+            else if(comboText.Equals("Sort by Dept and Date"))
+            {
+                if (text1.Equals("") || text1.Equals("Starting Date"))
+                {
+                    MessageBox.Show("Enter the Date");
+                }
+                else if (text2.Equals("") || text2.Equals("End Date"))
+                {
+                    MessageBox.Show("Enter the Department");
+                }
+                else
+                {
+                    DataTable dt = helper.getRequestDetailsByDateAndDept(text1, text2);
+                    dataGridView2.DataSource = dt;
+                    downloadingDataTable = dt;
+                }
+            }
+
+
+
+
+
+
+          
+            
+        }
+
+        private void Button6_Click(object sender, EventArgs e)
+        {
+            if(downloadingDataTable == null)
+            {
+                MessageBox.Show("Coudn't create report because the Dataset is Empty");
+                return;
+            }
+            DatabaseHelper helper = new DatabaseHelper();
+            if (helper.createPDF(downloadingDataTable, "G:\\SQL LITE DATABSE\\report.pdf"))
             {
                 MessageBox.Show("Report was saved as G:\\SQL LITE DATABSE\\report.pdf");
             }

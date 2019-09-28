@@ -162,6 +162,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "EditRequestPopupWindow";
             this.Text = "Update";
             this.Load += new System.EventHandler(this.EditRequestPopupWindow_Load);

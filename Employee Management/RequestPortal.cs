@@ -191,8 +191,19 @@ namespace Employee_Management
                 string department = textBox4.Text;
                 string description = textDescription.Text;
 
-               
-                if(dbhelper.insert(id, date, hours, department, description))
+                if(description == null || description.Equals(""))
+                {
+                    MessageBox.Show("Enter a Description");
+                    return;
+                }
+                if (department == null || department.Equals(""))
+                {
+                    MessageBox.Show("Enter a Department");
+                    return;
+                }
+
+
+                if (dbhelper.insert(id, date, hours, department, description))
                 {
                     MessageBox.Show("Request was sent!");
                     textBox1.Text = "";
@@ -223,6 +234,11 @@ namespace Employee_Management
         }
 
         private void Label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CrystalReportViewer1_Load(object sender, EventArgs e)
         {
 
         }

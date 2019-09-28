@@ -24,7 +24,7 @@ namespace Employee_Management
 
 
 
-        static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
+        static string myConnectionString = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
 
         public bool Insert(AttendanceClass a)
@@ -103,12 +103,12 @@ namespace Employee_Management
                 string sql = "UPDATE Attendance SET EmpID=@EmpID,date=@date,inTime=@inTime,outTime=@outTime WHERE AttendID=@AttendID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
+
                 cmd.Parameters.AddWithValue("@EmpID", a.EmployeeId);
                 cmd.Parameters.AddWithValue("@date", a.Date);
                 cmd.Parameters.AddWithValue("@inTime", a.ArrivedTime);
                 cmd.Parameters.AddWithValue("@outTime", a.LeftTime);
                 cmd.Parameters.AddWithValue("@AttendID", a.AttendId);
-
 
 
                 conn.Open();
@@ -134,7 +134,7 @@ namespace Employee_Management
             return isSuccess;
         }
 
-        public bool Delete(int id)
+        public bool Delete(AttendanceClass a)
         {
             bool isSuccess = false;
 
@@ -148,7 +148,7 @@ namespace Employee_Management
 
 
 
-                cmd.Parameters.AddWithValue("@AttendID", id);
+                cmd.Parameters.AddWithValue("@AttendID", a.AttendId);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();
@@ -174,39 +174,33 @@ namespace Employee_Management
             return isSuccess;
         }
 
-        public int GetAttendId(int index)
+
+        /*
+         while (check == index)
          {
-            /*
-             SqlConnection conn = new SqlConnection(myConnectionString);
+             /*conn.Open();
 
-             int check = 0;
-             DataTable dt = Select();
+             SqlCommand cmd3 = new SqlCommand("SELECT AttendID FROM Attendance WHERE AttendID=@AttendID ", conn);
+             cmd3.Parameters.AddWithValue("@AttendID", index);
 
-             while (check == index)
+
+             SqlDataReader reader = cmd3.ExecuteReader();
+             while (reader.Read())
              {
-                 /*conn.Open();
+                int AttendId = Convert.ToInt32(cmd3.Parameters["@AttendID"].Value);
 
-                 SqlCommand cmd3 = new SqlCommand("SELECT AttendID FROM Attendance WHERE AttendID=@AttendID ", conn);
-                 cmd3.Parameters.AddWithValue("@AttendID", index);
+             }
+             */
+        //int AttendId = int.Parse(dataGridView.row["AttendId"].ToString());
+        //if (check == index)
+        //{
+        //  return AttendId;
+        //}
+        //else
+        //{
+        //   check++;
+        //}
 
-
-                 SqlDataReader reader = cmd3.ExecuteReader();
-                 while (reader.Read())
-                 {
-                    int AttendId = Convert.ToInt32(cmd3.Parameters["@AttendID"].Value);
-
-                 }
-                 */
-        /* int AttendId = int.Parse(row["AttendID"].ToString());
-        if (check == index)
-        {
-            return AttendId;
-        }
-        else
-        {
-            check++;
-        }
-        */
 
         //conn.Close();
         /* string sql = "SELECT AttendID FROM Attendance WHERE AttendID=@AttendID";
@@ -227,12 +221,10 @@ namespace Employee_Management
 
 
     */
-        return 0;
 
-   
+
         //}
 
-    }
 
 
     }

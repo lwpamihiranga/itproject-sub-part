@@ -118,37 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPhJREFUSEvt
-        k0sOAUEQhmfvseM8uALOIkgQLFzH4xqYq3is8X+TqcRC6+4RFhNf8iVmulp1VfUkpaUplzKV19yjXEjW
-        PqIvz/LukLWeLAQbb5I/Wsu2rOS25EayRkxXRkHpdvIhLxyMJDEn2eBFKPTXTu5jK4mdZ0+BMFA20Qof
-        tI5YBh/MRbKpmj29pyaJZU8wMQnqkljmEIy1iPJ9dCSxUS2yIXMVfewksVFD5spRMhu5ii7Gkpjoawp8
-        PPahcRVpBTNBftvJcSILQRKr5JWsWRW4ktFQOjM5SG4X7iU9t7Y8Jy2UxMdA/pME8/MkU158g1luaUiS
-        BywHZPrfJV6JAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <metadata name="AttendId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="EmpId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="ArrivedTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="LeftTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEASABIAAD/4TeIRXhpZgAATU0AKgAAAAgABQESAAMAAAABAAEAAAExAAIAAAAm
@@ -3975,6 +3944,37 @@
         /wBG81/466dKztBQLYIAK0aI7AFSeXUdS1QCeXUiUypqAGUUUUAPp6Uynx/NJzQAlQySeZ8kX/fdPumK
         +SoOA33venR/L04oARESOnUbRRQAVLzUVTUAJzRzS06gBnNHNPqOSgBeaOaWigQ6nx1FQhoEXEkqwvSq
         0dTLVIR//9k=
+</value>
+  </data>
+  <metadata name="AttendId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="EmpId.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ArrivedTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="LeftTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Edit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Delete.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="btnSearch.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAPhJREFUSEvt
+        k0sOAUEQhmfvseM8uALOIkgQLFzH4xqYq3is8X+TqcRC6+4RFhNf8iVmulp1VfUkpaUplzKV19yjXEjW
+        PqIvz/LukLWeLAQbb5I/Wsu2rOS25EayRkxXRkHpdvIhLxyMJDEn2eBFKPTXTu5jK4mdZ0+BMFA20Qof
+        tI5YBh/MRbKpmj29pyaJZU8wMQnqkljmEIy1iPJ9dCSxUS2yIXMVfewksVFD5spRMhu5ii7Gkpjoawp8
+        PPahcRVpBTNBftvJcSILQRKr5JWsWRW4ktFQOjM5SG4X7iU9t7Y8Jy2UxMdA/pME8/MkU158g1luaUiS
+        BywHZPrfJV6JAAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

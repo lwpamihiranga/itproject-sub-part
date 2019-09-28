@@ -2,6 +2,7 @@
 {
     partial class AttendanceUserControl
     {
+       
         /// <summary> 
         /// Required designer variable.
         /// </summary>
@@ -29,11 +30,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceUserControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -47,7 +48,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAttendanceId = new System.Windows.Forms.Label();
             this.lblEmployeeId = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblEnterLeftTime = new System.Windows.Forms.Label();
             this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.lblInTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
@@ -59,9 +60,7 @@
             this.dateTimePickerSearch = new System.Windows.Forms.DateTimePicker();
             this.lblSearchByDate = new System.Windows.Forms.Label();
             this.lblSearchByEmpId = new System.Windows.Forms.Label();
-            this.btnGenReport = new System.Windows.Forms.Button();
             this.btnViewAll = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.AttendId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +70,8 @@
             this.LeftTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.Attendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,6 +80,7 @@
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -94,16 +95,6 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Attendance";
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::Employee_Management.Properties.Resources.WhatsApp_Image_2019_08_27_at_11_251;
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(124, 159);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.Attendance);
@@ -117,6 +108,7 @@
             // 
             // Attendance
             // 
+            this.Attendance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Attendance.Controls.Add(this.pictureBox1);
             this.Attendance.Controls.Add(this.panel1);
             this.Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -228,6 +220,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -237,12 +230,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Insert Attendance";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.TabPage2_Click);
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblAttendanceId);
             this.panel2.Controls.Add(this.lblEmployeeId);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.lblEnterLeftTime);
             this.panel2.Controls.Add(this.txtEmployeeId);
             this.panel2.Controls.Add(this.lblInTime);
             this.panel2.Controls.Add(this.lblDate);
@@ -254,15 +249,15 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(437, 274);
             this.panel2.TabIndex = 13;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             // 
             // lblAttendanceId
             // 
             this.lblAttendanceId.AutoSize = true;
             this.lblAttendanceId.Location = new System.Drawing.Point(94, 9);
             this.lblAttendanceId.Name = "lblAttendanceId";
-            this.lblAttendanceId.Size = new System.Drawing.Size(46, 18);
+            this.lblAttendanceId.Size = new System.Drawing.Size(0, 18);
             this.lblAttendanceId.TabIndex = 12;
-            this.lblAttendanceId.Text = "label3";
             // 
             // lblEmployeeId
             // 
@@ -275,15 +270,15 @@
             this.lblEmployeeId.TabIndex = 1;
             this.lblEmployeeId.Text = "Employee Id:";
             // 
-            // label2
+            // lblEnterLeftTime
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(182, 165);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 18);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "display left time";
+            this.lblEnterLeftTime.AutoSize = true;
+            this.lblEnterLeftTime.ForeColor = System.Drawing.Color.Black;
+            this.lblEnterLeftTime.Location = new System.Drawing.Point(182, 165);
+            this.lblEnterLeftTime.Name = "lblEnterLeftTime";
+            this.lblEnterLeftTime.Size = new System.Drawing.Size(130, 18);
+            this.lblEnterLeftTime.TabIndex = 11;
+            this.lblEnterLeftTime.Text = "Enter left time later";
             // 
             // txtEmployeeId
             // 
@@ -359,14 +354,14 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage3.Controls.Add(this.dateTimePickerSearch);
             this.tabPage3.Controls.Add(this.lblSearchByDate);
             this.tabPage3.Controls.Add(this.lblSearchByEmpId);
-            this.tabPage3.Controls.Add(this.btnGenReport);
             this.tabPage3.Controls.Add(this.btnViewAll);
-            this.tabPage3.Controls.Add(this.btnSearch);
             this.tabPage3.Controls.Add(this.txtSearch);
             this.tabPage3.Controls.Add(this.dataGridView);
+            this.tabPage3.Controls.Add(this.btnSearch);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -378,72 +373,52 @@
             // 
             // dateTimePickerSearch
             // 
+            this.dateTimePickerSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerSearch.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerSearch.Location = new System.Drawing.Point(368, 17);
             this.dateTimePickerSearch.Name = "dateTimePickerSearch";
-            this.dateTimePickerSearch.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerSearch.Size = new System.Drawing.Size(200, 24);
             this.dateTimePickerSearch.TabIndex = 15;
             // 
             // lblSearchByDate
             // 
             this.lblSearchByDate.AutoSize = true;
+            this.lblSearchByDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchByDate.ForeColor = System.Drawing.Color.Black;
             this.lblSearchByDate.Location = new System.Drawing.Point(319, 21);
             this.lblSearchByDate.Name = "lblSearchByDate";
-            this.lblSearchByDate.Size = new System.Drawing.Size(33, 13);
+            this.lblSearchByDate.Size = new System.Drawing.Size(43, 18);
             this.lblSearchByDate.TabIndex = 14;
             this.lblSearchByDate.Text = "Date:";
             // 
             // lblSearchByEmpId
             // 
             this.lblSearchByEmpId.AutoSize = true;
+            this.lblSearchByEmpId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSearchByEmpId.ForeColor = System.Drawing.Color.Black;
             this.lblSearchByEmpId.Location = new System.Drawing.Point(20, 17);
             this.lblSearchByEmpId.Name = "lblSearchByEmpId";
-            this.lblSearchByEmpId.Size = new System.Drawing.Size(68, 13);
+            this.lblSearchByEmpId.Size = new System.Drawing.Size(93, 18);
             this.lblSearchByEmpId.TabIndex = 13;
             this.lblSearchByEmpId.Text = "Employee Id:";
-            // 
-            // btnGenReport
-            // 
-            this.btnGenReport.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnGenReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenReport.ForeColor = System.Drawing.Color.White;
-            this.btnGenReport.Location = new System.Drawing.Point(343, 274);
-            this.btnGenReport.Name = "btnGenReport";
-            this.btnGenReport.Size = new System.Drawing.Size(316, 27);
-            this.btnGenReport.TabIndex = 12;
-            this.btnGenReport.Text = "GENERATE REPORT";
-            this.btnGenReport.UseVisualStyleBackColor = false;
             // 
             // btnViewAll
             // 
             this.btnViewAll.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnViewAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewAll.ForeColor = System.Drawing.Color.White;
-            this.btnViewAll.Location = new System.Drawing.Point(23, 274);
+            this.btnViewAll.Location = new System.Drawing.Point(13, 274);
             this.btnViewAll.Name = "btnViewAll";
-            this.btnViewAll.Size = new System.Drawing.Size(314, 27);
+            this.btnViewAll.Size = new System.Drawing.Size(646, 27);
             this.btnViewAll.TabIndex = 11;
             this.btnViewAll.Text = "VIEW ALL";
             this.btnViewAll.UseVisualStyleBackColor = false;
             this.btnViewAll.Click += new System.EventHandler(this.BtnViewAll_Click);
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
-            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(587, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(72, 30);
-            this.btnSearch.TabIndex = 10;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
-            // 
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.Color.Black;
             this.txtSearch.Location = new System.Drawing.Point(119, 17);
             this.txtSearch.Multiline = true;
@@ -453,10 +428,18 @@
             // 
             // dataGridView
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AttendId,
@@ -466,20 +449,20 @@
             this.LeftTime,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.Location = new System.Drawing.Point(13, 51);
             this.dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.Size = new System.Drawing.Size(646, 201);
             this.dataGridView.TabIndex = 8;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
@@ -536,6 +519,28 @@
             this.Delete.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Delete.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSearch.Location = new System.Drawing.Point(587, 15);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(72, 30);
+            this.btnSearch.TabIndex = 10;
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Employee_Management.Properties.Resources.WhatsApp_Image_2019_08_27_at_11_251;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(124, 159);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
             // AttendanceUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -546,7 +551,6 @@
             this.Name = "AttendanceUserControl";
             this.Size = new System.Drawing.Size(683, 508);
             this.Load += new System.EventHandler(this.AttendanceUserControl_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.Attendance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -558,6 +562,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -581,7 +586,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblAttendanceId;
         private System.Windows.Forms.Label lblEmployeeId;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblEnterLeftTime;
         private System.Windows.Forms.TextBox txtEmployeeId;
         private System.Windows.Forms.Label lblInTime;
         private System.Windows.Forms.Label lblDate;
@@ -592,7 +597,6 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerSearch;
         private System.Windows.Forms.Label lblSearchByDate;
         private System.Windows.Forms.Label lblSearchByEmpId;
-        private System.Windows.Forms.Button btnGenReport;
         private System.Windows.Forms.Button btnViewAll;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;

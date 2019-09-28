@@ -50,11 +50,44 @@ namespace Employee_Management
             {
                 string textID = txtID.Text;
                 string date = dateTimePicker1.Text;
-                int hours = int.Parse(txtHours.Text);
+                int hours = 0;
+                try
+                {
+                    hours = int.Parse(txtHours.Text);
+                }
+                catch(Exception ess)
+                {
+                    MessageBox.Show("Enter a Numeric value for Hours");
+                    return;
+                }
+                
+                
                 string department = txtDepartment.Text;
                 string desc = txtDescription.Text;
 
-                if(dbhelper.update(RequestPortal.editRequestID,textID,date,department,desc,hours))
+
+                if(textID.Equals("") || textID == null)
+                {
+                    MessageBox.Show("Enter a ID");
+                    return;
+                }
+                if (desc == null || desc.Equals(""))
+                {
+                    MessageBox.Show("Enter a Description");
+                    return;
+                }
+                if (department == null || department.Equals(""))
+                {
+                    MessageBox.Show("Enter a Department");
+                    return;
+                }
+                if (dateTimePicker1.Value < DateTime.Now)
+                {
+                    MessageBox.Show("Invalid Date");
+                    return;
+                }
+
+                if (dbhelper.update(RequestPortal.editRequestID,textID,date,department,desc,hours))
                 {
                     MessageBox.Show("Updated");
                     this.Hide();

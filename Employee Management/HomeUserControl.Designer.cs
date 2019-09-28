@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeUserControl));
             this.Label = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
@@ -39,11 +39,11 @@
             this.Label.AutoSize = true;
             this.Label.BackColor = System.Drawing.Color.Transparent;
             this.Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label.Location = new System.Drawing.Point(100, 244);
+            this.Label.Location = new System.Drawing.Point(227, 214);
             this.Label.Name = "Label";
-            this.Label.Size = new System.Drawing.Size(99, 39);
+            this.Label.Size = new System.Drawing.Size(94, 39);
             this.Label.TabIndex = 0;
-            this.Label.Text = "Time";
+            this.Label.Text = "Date";
             // 
             // pictureBox3
             // 
@@ -56,11 +56,23 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.PictureBox3_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(227, 272);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 39);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Time";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
             // HomeUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.Label);
             this.Name = "HomeUserControl";
@@ -76,5 +88,6 @@
 
         private System.Windows.Forms.Label Label;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
     }
 }

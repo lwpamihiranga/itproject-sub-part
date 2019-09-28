@@ -202,6 +202,12 @@ namespace Employee_Management
                     return;
                 }
 
+                if (dateTimePicker1.Value < DateTime.Now)
+                {
+                    MessageBox.Show("Invalid Date");
+                    return;
+                }
+
 
                 if (dbhelper.insert(id, date, hours, department, description))
                 {

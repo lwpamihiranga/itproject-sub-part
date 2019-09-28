@@ -24,7 +24,7 @@ namespace Employee_Management
 
 
 
-        static string myConnectionString = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
 
 
         public bool Insert(AttendanceClass a)
@@ -74,7 +74,32 @@ namespace Employee_Management
 
             try
             {
-                string sql = "SELECT EmpID,date,inTime,outTime  FROM Attendance";
+                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+            return dt;
+        }
+        public DataTable SelectByID(int id)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE AttendID = " + id;
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
@@ -92,7 +117,7 @@ namespace Employee_Management
             return dt;
         }
 
-        public bool Update(AttendanceClass a)
+        public bool Update(AttendanceClass a,int id)
         {
             bool isSuccess = false;
 
@@ -108,7 +133,7 @@ namespace Employee_Management
                 cmd.Parameters.AddWithValue("@date", a.Date);
                 cmd.Parameters.AddWithValue("@inTime", a.ArrivedTime);
                 cmd.Parameters.AddWithValue("@outTime", a.LeftTime);
-                cmd.Parameters.AddWithValue("@AttendID", a.AttendId);
+                cmd.Parameters.AddWithValue("@AttendID", id);
 
 
                 conn.Open();
@@ -134,7 +159,7 @@ namespace Employee_Management
             return isSuccess;
         }
 
-        public bool Delete(AttendanceClass a)
+        public bool Delete(int id)
         {
             bool isSuccess = false;
 
@@ -148,7 +173,7 @@ namespace Employee_Management
 
 
 
-                cmd.Parameters.AddWithValue("@AttendID", a.AttendId);
+                cmd.Parameters.AddWithValue("@AttendID", id);
 
                 conn.Open();
                 int rows = cmd.ExecuteNonQuery();

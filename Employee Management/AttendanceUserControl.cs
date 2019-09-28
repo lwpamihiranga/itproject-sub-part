@@ -14,6 +14,8 @@ namespace Employee_Management
 {
     public partial class AttendanceUserControl : UserControl
     {
+
+        public static int ID;
         public AttendanceUserControl()
         {
             InitializeComponent();
@@ -21,7 +23,11 @@ namespace Employee_Management
 
         private void AttendanceUserControl_Load(object sender, EventArgs e)
         {
-
+            AttendanceClass a = new AttendanceClass();
+            DataTable dt = a.Select();
+            dataGridView.DataSource = dt;
+            lblInTime.Text = DateTime.Now.ToString("HH:mm");
+            a.ArrivedTime = lblInTime.Text;
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -32,43 +38,13 @@ namespace Employee_Management
             AttendanceClass a = new AttendanceClass();
             if (e.ColumnIndex == dataGridView.Columns["Edit"].Index && e.RowIndex >= 0)
             {
-                if (dataGridView.Rows.Count > 0)
-                {
-                    foreach (DataGridViewRow row in dataGridView.SelectedRows) // foreach datagridview selected rows values  
-                    {
-                        //txtAttend.Text = row.Cells[0].Value.ToString();
-                        //txtEmployeeId.Text = row.Cells[1].Value.ToString();
-                        //txtDate.Text = row.Cells[2].Value;
-                        //txtArrivedTime.Text = row.Cells[3].Value.ToString();
-                        //txtLeftTime.Text = row.Cells[4].Value.ToString();
+                ID = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
+                UpdateAttendance update = new UpdateAttendance();
+                update.ShowDialog();
+                
+                
+               
 
-                    }
-                }
-                /* int rowIndex = e.RowIndex;
-                 string EmpId = dataGridView.Rows[rowIndex].Cells[1].Value.ToString(); ;
-                 string date = dataGridView.Rows[rowIndex].Cells[2].Value.ToString(); ;
-                 string ArrivedTime = dataGridView.Rows[rowIndex].Cells[3].Value.ToString();
-                 */
-                //UpdateForm u = new UpdateForm();
-               // u.ShowDialog();
-
-                //a.EmployeeId = Int32.Parse(u.txtUpdateEmployeeId.Text);
-                // a.Date = dateTimePicker1.Text;
-                a.ArrivedTime = lblArrivedTime.Text;
-
-
-
-                bool success = a.Update(a);
-                //  MessageBox.Show("Edit button clicked and index is "+e.RowIndex);
-                if (success == true)
-                {
-                    MessageBox.Show("Updated successfully!");
-                }
-                else
-                {
-                    MessageBox.Show("Cannot update!");
-
-                }
 
 
 
@@ -78,8 +54,8 @@ namespace Employee_Management
             {
 
 
-
-                bool success = a.Delete(a);
+                ID = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
+                bool success = a.Delete(ID);
                 if (success == true)
                 {
                     MessageBox.Show("Deleted successfully");
@@ -128,7 +104,7 @@ namespace Employee_Management
                 a.EmployeeId = Int32.Parse(txtEmployeeId.Text);
                 a.Date = dateTimePicker1.Text;
 
-                lblInTime.Text = DateTime.Now.ToString("HH:mm");
+               // lblInTime.Text = DateTime.Now.ToString("HH:mm");
                 a.ArrivedTime = lblInTime.Text;
                 //a.ArrivedTime = lblInTime.Text;
                 // a.ArrivedTime = txtArrivedTime.Text;
@@ -161,7 +137,7 @@ namespace Employee_Management
 
         }
 
-        static string myConnectionString = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+        static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
@@ -179,6 +155,16 @@ namespace Employee_Management
         {
             DataTable dt = a.Select();
             dataGridView.DataSource = dt;
+        }
+
+        private void TabPage2_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

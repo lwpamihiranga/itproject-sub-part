@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnConfirmLeftTime = new System.Windows.Forms.Button();
+            this.lblOutTime = new System.Windows.Forms.Label();
+            this.lblLeftTime = new System.Windows.Forms.Label();
             this.txtUpdateEmpID = new System.Windows.Forms.TextBox();
             this.lblAttendanceId = new System.Windows.Forms.Label();
             this.lblEmployeeId = new System.Windows.Forms.Label();
@@ -39,8 +42,6 @@
             this.dateTimePickerUpdate = new System.Windows.Forms.DateTimePicker();
             this.lblLeftTme = new System.Windows.Forms.Label();
             this.lblArrivedTime = new System.Windows.Forms.Label();
-            this.lblLeftTime = new System.Windows.Forms.Label();
-            this.lblOutTime = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnConfirmLeftTime);
             this.panel2.Controls.Add(this.lblOutTime);
             this.panel2.Controls.Add(this.lblLeftTime);
             this.panel2.Controls.Add(this.txtUpdateEmpID);
@@ -65,6 +67,36 @@
             this.panel2.Size = new System.Drawing.Size(547, 350);
             this.panel2.TabIndex = 14;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
+            // 
+            // btnConfirmLeftTime
+            // 
+            this.btnConfirmLeftTime.Location = new System.Drawing.Point(139, 282);
+            this.btnConfirmLeftTime.Name = "btnConfirmLeftTime";
+            this.btnConfirmLeftTime.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmLeftTime.TabIndex = 16;
+            this.btnConfirmLeftTime.Text = "Confirm Left Time";
+            this.btnConfirmLeftTime.UseVisualStyleBackColor = true;
+            this.btnConfirmLeftTime.Click += new System.EventHandler(this.BtnConfirmLeftTime_Click);
+            // 
+            // lblOutTime
+            // 
+            this.lblOutTime.AutoSize = true;
+            this.lblOutTime.BackColor = System.Drawing.Color.DarkGray;
+            this.lblOutTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOutTime.ForeColor = System.Drawing.Color.Black;
+            this.lblOutTime.Location = new System.Drawing.Point(182, 162);
+            this.lblOutTime.Name = "lblOutTime";
+            this.lblOutTime.Size = new System.Drawing.Size(2, 15);
+            this.lblOutTime.TabIndex = 15;
+            // 
+            // lblLeftTime
+            // 
+            this.lblLeftTime.AutoSize = true;
+            this.lblLeftTime.BackColor = System.Drawing.Color.Gray;
+            this.lblLeftTime.Location = new System.Drawing.Point(182, 164);
+            this.lblLeftTime.Name = "lblLeftTime";
+            this.lblLeftTime.Size = new System.Drawing.Size(0, 13);
+            this.lblLeftTime.TabIndex = 14;
             // 
             // txtUpdateEmpID
             // 
@@ -138,6 +170,7 @@
             // 
             // dateTimePickerUpdate
             // 
+            this.dateTimePickerUpdate.Enabled = false;
             this.dateTimePickerUpdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerUpdate.Location = new System.Drawing.Point(185, 73);
             this.dateTimePickerUpdate.Name = "dateTimePickerUpdate";
@@ -167,26 +200,6 @@
             this.lblArrivedTime.Size = new System.Drawing.Size(94, 18);
             this.lblArrivedTime.TabIndex = 3;
             this.lblArrivedTime.Text = "Arrived Time:";
-            // 
-            // lblLeftTime
-            // 
-            this.lblLeftTime.AutoSize = true;
-            this.lblLeftTime.BackColor = System.Drawing.Color.Gray;
-            this.lblLeftTime.Location = new System.Drawing.Point(182, 164);
-            this.lblLeftTime.Name = "lblLeftTime";
-            this.lblLeftTime.Size = new System.Drawing.Size(0, 13);
-            this.lblLeftTime.TabIndex = 14;
-            // 
-            // lblOutTime
-            // 
-            this.lblOutTime.AutoSize = true;
-            this.lblOutTime.BackColor = System.Drawing.Color.DarkGray;
-            this.lblOutTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblOutTime.ForeColor = System.Drawing.Color.Black;
-            this.lblOutTime.Location = new System.Drawing.Point(182, 162);
-            this.lblOutTime.Name = "lblOutTime";
-            this.lblOutTime.Size = new System.Drawing.Size(2, 15);
-            this.lblOutTime.TabIndex = 15;
             // 
             // UpdateAttendance
             // 
@@ -219,5 +232,6 @@
         private System.Windows.Forms.Label lblInTime;
         private System.Windows.Forms.Label lblLeftTime;
         private System.Windows.Forms.Label lblOutTime;
+        private System.Windows.Forms.Button btnConfirmLeftTime;
     }
 }

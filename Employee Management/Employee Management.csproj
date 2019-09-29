@@ -78,6 +78,12 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DisplayAttendanceReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DisplayAttendanceReport.Designer.cs">
+      <DependentUpon>DisplayAttendanceReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditRequestPopupWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DisplayAttendanceReport.resx">
+      <DependentUpon>DisplayAttendanceReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditRequestPopupWindow.resx">
       <DependentUpon>EditRequestPopupWindow.cs</DependentUpon>

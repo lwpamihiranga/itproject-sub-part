@@ -38,7 +38,7 @@
             this.button4 = new System.Windows.Forms.Button();
             this.requestPortal1 = new Employee_Management.RequestPortal();
             this.homeUserControl1 = new Employee_Management.HomeUserControl();
-            this.attendanceUserControl1 = new Employee_Management.AttendanceUserControl();
+            this.attendanceUserControl1 = new Employee_Management.AttendanceUserControl1();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -191,7 +191,7 @@
         private RequestPortal requestPortal1;
         private System.Windows.Forms.Button button4;
         private HomeUserControl homeUserControl1;
-        private AttendanceUserControl attendanceUserControl1;
+        private AttendanceUserControl1 attendanceUserControl1;
        
     }
 }

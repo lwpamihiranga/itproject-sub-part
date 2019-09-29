@@ -20,8 +20,8 @@ namespace Employee_Management
         AttendanceClass a = new AttendanceClass();
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-
-           // int id = AttendanceUserControl.ID;
+           
+            // int id = AttendanceUserControl.ID;
             //DataTable dt = a.Select();
 
             try
@@ -33,6 +33,7 @@ namespace Employee_Management
                 MessageBox.Show("Enter a numeric value");
                 return;
             }
+
             
             a.Date = dateTimePickerUpdate.Text;
             a.ArrivedTime = lblInTime.Text;
@@ -41,7 +42,7 @@ namespace Employee_Management
 
 
 
-            bool success = a.Update(a,AttendanceUserControl.ID);
+            bool success = a.Update(a,AttendanceUserControl1.ID);
 
             if (success == true)
             {
@@ -53,30 +54,45 @@ namespace Employee_Management
             }
             this.Hide();
 
+
         }
 
         private void UpdateAttendance_Load(object sender, EventArgs e)
         {
-            lblOutTime.Text = DateTime.Now.ToString("HH:mm");
-            a.ArrivedTime = lblOutTime.Text;
+            
+                lblOutTime.Text = DateTime.Now.ToString("HH:mm");
+                a.LeftTime = lblOutTime.Text;
 
-            AttendanceClass cl = new AttendanceClass();
-            DataTable dt = cl.SelectByID(AttendanceUserControl.ID);
+                AttendanceClass cl = new AttendanceClass();
+                DataTable dt = cl.SelectByID(AttendanceUserControl1.ID);
 
-            foreach (DataRow row in dt.Rows)
-            {
-                txtUpdateEmpID.Text = row["EmpID"].ToString();
-                lblInTime.Text = row["inTime"].ToString();
-                lblLeftTime.Text = row["outTime"].ToString();
-                dateTimePickerUpdate.Text = row["date"].ToString();
+                foreach (DataRow row in dt.Rows)
+                {
+                    txtUpdateEmpID.Text = row["EmpID"].ToString();
+                    lblInTime.Text = row["inTime"].ToString();
+                   lblLeftTime.Text = row["outTime"].ToString();
+                    dateTimePickerUpdate.Text = row["date"].ToString();
 
             }
+           
+           
+
+          
 
         }
 
         private void Panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private bool buttonWasClicked = false;
+        private void BtnConfirmLeftTime_Click(object sender, EventArgs e)
+        {
+          
+
+            buttonWasClicked = true;
+          
         }
     }
 }

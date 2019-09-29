@@ -117,6 +117,32 @@ namespace Employee_Management
             return dt;
         }
 
+        public DataTable SortByID(int sortID)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+           
+            DataTable dt = new DataTable();
+
+            try
+            {
+                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE AttendID = " + sortID;
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+            return dt;
+        }
+
         public bool Update(AttendanceClass a,int id)
         {
             bool isSuccess = false;

@@ -12,11 +12,12 @@ using System.Data.SqlClient;
 
 namespace Employee_Management
 {
-    public partial class AttendanceUserControl : UserControl
+    public partial class AttendanceUserControl1 : UserControl
     {
 
         public static int ID;
-        public AttendanceUserControl()
+        public int sortID;
+        public AttendanceUserControl1()
         {
             InitializeComponent();
         }
@@ -43,27 +44,31 @@ namespace Employee_Management
                 update.ShowDialog();
                 
                 
-               
-
-
-
 
             }
 
             if (e.ColumnIndex == dataGridView.Columns["Delete"].Index && e.RowIndex >= 0)
             {
+               DialogResult result= MessageBox.Show("Are you sure you want to delete this record?", "Confirm Deletion", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation);
+                 
+                if ( result==DialogResult.Yes)
+                {
+                      ID = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
+
+                      bool success = a.Delete(ID);
 
 
-                ID = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
-                bool success = a.Delete(ID);
-                if (success == true)
-                {
-                    MessageBox.Show("Deleted successfully");
+                        if (success == true)
+                         {
+                             MessageBox.Show("Deleted successfully");
+                         }
+                        else
+                         {
+                            MessageBox.Show("Cannot delete");
+                         }
+
                 }
-                else
-                {
-                    MessageBox.Show("Cannot delete");
-                }
+
             }
 
         }
@@ -134,7 +139,9 @@ namespace Employee_Management
 
         private void TabPage3_Click(object sender, EventArgs e)
         {
-
+            AttendanceClass a = new AttendanceClass();
+            DataTable dt = a.Select();
+            dataGridView.DataSource = dt;
         }
 
         static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
@@ -145,7 +152,9 @@ namespace Employee_Management
             int key = Int32.Parse(txtSearch.Text);
             string searchDate = dateTimePickerSearch.Text;
 
-            SqlDataAdapter adapter1 = new SqlDataAdapter("SELECT EmpID,date,inTime,outTime FROM Attendance WHERE  EmpID=" + key + "AND date='" + searchDate + "'", conn);
+           
+            SqlDataAdapter adapter1 = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE  EmpID=" + key + "AND date='" + searchDate + "'", conn);
+          
             DataTable dt = new DataTable();
             adapter1.Fill(dt);
             dataGridView.DataSource = dt;
@@ -164,6 +173,28 @@ namespace Employee_Management
 
         private void Panel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        AttendanceClass at = new AttendanceClass();
+        private void Button7_Click(object sender, EventArgs e)
+        {
+                          
+            DisplayAttendanceReport display = new DisplayAttendanceReport();
+            display.ShowDialog();
+
+            int sortID = Int32.Parse(txtEmpIDReport.Text);
+
+
+            at.SortByID(sortID);
+
+            AttendanceReport report = new AttendanceReport();
+            report.ShowDialog();
+
+            DataTable dt = new DataTable();
+            dataGridView.DataSource = dt;
+
+
 
         }
     }

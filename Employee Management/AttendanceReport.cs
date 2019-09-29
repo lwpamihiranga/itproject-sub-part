@@ -24,6 +24,8 @@ namespace Employee_Management
         {
             DataTable dt = a.Select();
             dataGridViewReport.DataSource = dt;
+
+            
         }
         static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
         private void BtnSearchReport_Click(object sender, EventArgs e)

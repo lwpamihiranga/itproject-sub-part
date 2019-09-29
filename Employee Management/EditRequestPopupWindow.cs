@@ -25,18 +25,18 @@ namespace Employee_Management
             
              int id = RequestPortal.editRequestID;
              DataTable dt = dbhelper.getRequestDetails(id);
-       
+             dateTimePicker1.MinDate = DateTime.Today;
+
 
             foreach (DataRow row in dt.Rows)
             {
-                string name = row["ReqID"].ToString();
-                txtID.Text = row["EmpID"].ToString();
+                    string name = row["ReqID"].ToString();
+                    txtID.Text = row["EmpID"].ToString();
+                    txtHours.Text = row["LeaveHours"].ToString();
+                    txtDepartment.Text = row["Department"].ToString();
+                    txtDescription.Text = row["Description"].ToString();
 
-                dateTimePicker1.Text = row["Date"].ToString();
-
-                txtHours.Text = row["LeaveHours"].ToString();
-                txtDepartment.Text = row["Department"].ToString();
-                txtDescription.Text = row["Description"].ToString();
+                    dateTimePicker1.Text = row["Date"].ToString();
 
             }
 
@@ -81,11 +81,7 @@ namespace Employee_Management
                     MessageBox.Show("Enter a Department");
                     return;
                 }
-                if (dateTimePicker1.Value < DateTime.Now)
-                {
-                    MessageBox.Show("Invalid Date");
-                    return;
-                }
+
 
                 if (dbhelper.update(RequestPortal.editRequestID,textID,date,department,desc,hours))
                 {

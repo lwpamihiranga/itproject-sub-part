@@ -19,6 +19,7 @@ namespace Employee_Management
         public static bool isSearchEnabled = false;
         public static int editRequestID = 0;
         static DataTable downloadingDataTable = null;
+        //bool isThreadNeedToRun = false;
 
         DatabaseHelper dbhelper = new DatabaseHelper();
         
@@ -34,19 +35,7 @@ namespace Employee_Management
 
         private void RequestPortal_Load(object sender, EventArgs e)
         {
-
-
-            System.Threading.Tasks.Task.Factory.StartNew(() =>
-            {
-                while (true)
-                {
-                    Thread.Sleep(250);
-                    this.Invoke(new Action(() =>
-                       setVisibility()));
-                }
-
-            });
-
+            dateTimePicker1.MinDate = DateTime.Today;
 
             DataTable dt = dbhelper.Select();
 
@@ -57,30 +46,40 @@ namespace Employee_Management
 
             gridView.DataSource = dt;
         }
+        public void refreshDataGridView()
+        {
+            DataTable dt = dbhelper.Select();
+            numberOfRows = dbhelper.getNumberOfRows();
+            gridView.DataSource = dt;
+           
+
+        }
         public void setVisibility()
         {
             String s = comboBox1.Text;
             if (s.Equals("Sort by Date"))
             {
                 textBox3.Visible = false;
-                //textBox5.Text = "Enter Date";
+                textBox5.Text = "Enter Date";
                 
               
             }
             if (s.Equals("Sort by EmployeeID"))
             {
                 textBox3.Visible = false;
-                //textBox5.Text = "Enter ID";
+                textBox5.Text = "Enter ID";
             }
             if (s.Equals("Sort between a Range"))
             {
                 textBox3.Visible = true;
-                //textBox5.Text = "End Date";
-               // textBox3.Text = "Starting Date";
+                textBox5.Text = "End Date";
+                textBox3.Text = "Starting Date";
             }
             if(s.Equals("Sort by Dept and Date"))
             {
                 textBox3.Visible = true;
+                textBox5.Text = "Enter Dept";
+                textBox3.Text = "Enter Date";
             }
         }
 
@@ -124,6 +123,7 @@ namespace Employee_Management
                     editRequestID = id;
                     EditRequestPopupWindow edit = new EditRequestPopupWindow();
                     edit.ShowDialog();
+                    refreshDataGridView();
                 }
                 
             }
@@ -143,6 +143,7 @@ namespace Employee_Management
                                 DataTable dt = dbhelper.Select();
                                 gridView.DataSource = dt;
                                 numberOfRows = dbhelper.getNumberOfRows();
+                                refreshDataGridView();
 
 
                             }
@@ -231,6 +232,7 @@ namespace Employee_Management
         {
             try
             {
+                
                 string id = textBox1.Text;
                 string date = dateTimePicker1.Text;
                 int hours = int.Parse(textBox2.Text);
@@ -248,12 +250,6 @@ namespace Employee_Management
                     return;
                 }
 
-                if (dateTimePicker1.Value < DateTime.Now)
-                {
-                    MessageBox.Show("Invalid Date");
-                    return;
-                }
-
 
                 if (dbhelper.insert(id, date, hours, department, description))
                 {
@@ -263,6 +259,9 @@ namespace Employee_Management
                     textBox2.Text = "";
                     textBox4.Text = "";
                     textDescription.Text = "";
+
+                    refreshDataGridView();
+         
                 }
                 else
                 {
@@ -279,6 +278,7 @@ namespace Employee_Management
 
 
         }
+       
 
         private void TabPage1_Click(object sender, EventArgs e)
         {
@@ -314,7 +314,7 @@ namespace Employee_Management
 
             if (comboText.Equals(""))
             {
-                MessageBox.Show("Select the filter You want");
+                MessageBox.Show("Select a filter first");
                 return;
             }
 
@@ -366,11 +366,11 @@ namespace Employee_Management
             }
             else if(comboText.Equals("Sort by Dept and Date"))
             {
-                if (text1.Equals("") || text1.Equals("Starting Date"))
+                if (text1.Equals("") || text1.Equals("Enter Date"))
                 {
                     MessageBox.Show("Enter the Date");
                 }
-                else if (text2.Equals("") || text2.Equals("End Date"))
+                else if (text2.Equals("") || text2.Equals("Enter Dept"))
                 {
                     MessageBox.Show("Enter the Department");
                 }
@@ -407,6 +407,22 @@ namespace Employee_Management
             {
                 MessageBox.Show("Something went wrong!");
             }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ///MessageBox.Show("Changed");
+            setVisibility();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

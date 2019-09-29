@@ -1,8 +1,11 @@
-﻿using System;
+﻿using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -117,6 +120,7 @@ namespace Employee_Management
             return dt;
         }
 
+       
         public DataTable SortByID(int sortID)
         {
             SqlConnection conn = new SqlConnection(myConnectionString);
@@ -125,11 +129,88 @@ namespace Employee_Management
 
             try
             {
-                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE AttendID = " + sortID;
+               // SqlDataAdapter adapter = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE AttendID = " + sortID);
+                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE EmpID = " + sortID;
                 SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                SqlDataAdapter adapter2 = new SqlDataAdapter(cmd);
                 conn.Open();
-                adapter.Fill(dt);
+                adapter2.Fill(dt);
+
+                
+
+               // return dt;
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+            return dt;
+        }
+
+        public DataTable SortByDate(string date)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+
+            DataTable dt = new DataTable();
+
+            try
+            {
+                // SqlDataAdapter adapter = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE AttendID = " + sortID);
+                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE date = '" + date + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter2 = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter2.Fill(dt);
+
+
+
+                // return dt;
+
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                conn.Close();
+
+            }
+            return dt;
+        }
+
+        public DataTable SortByIDDate(int sortID)
+        {
+            SqlConnection conn = new SqlConnection(myConnectionString);
+            String mystring = "SELECT date FROM Attendance WHERE date=" + AttendanceUserControl1.month;
+            DataTable dt = new DataTable();
+            string[] birthday = mystring.Split('/');
+            int year, month, day;
+
+            int.TryParse(birthday[0], out day);
+            int.TryParse(birthday[1], out month);
+            int.TryParse(birthday[2], out year);
+
+            String month1 = year.ToString();
+            try
+            {
+                // SqlDataAdapter adapter = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE AttendID = " + sortID);
+                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE EmpID = " + sortID;
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataAdapter adapter2 = new SqlDataAdapter(cmd);
+                conn.Open();
+                adapter2.Fill(dt);
+
+
+
+                // return dt;
+
             }
             catch (Exception e)
             {
@@ -275,7 +356,55 @@ namespace Employee_Management
 
 
         //}
+        public bool createPDF(DataTable dataTable, string destinationPath)
+        {
+            try
+            {
+                Document document = new Document();
+                PdfWriter writer = PdfWriter.GetInstance(document, new FileStream(destinationPath, FileMode.Create));
+                document.Open();
 
+                PdfPTable table = new PdfPTable(dataTable.Columns.Count);
+                table.WidthPercentage = 100;
+
+                //Set columns names in the pdf file
+                for (int k = 0; k < dataTable.Columns.Count; k++)
+                {
+                    PdfPCell cell = new PdfPCell(new Phrase(dataTable.Columns[k].ColumnName));
+
+                    cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                    cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+                    cell.BackgroundColor = new iTextSharp.text.BaseColor(51, 102, 102);
+
+                    table.AddCell(cell);
+                }
+
+                //Add values of DataTable in pdf file
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dataTable.Columns.Count; j++)
+                    {
+                        PdfPCell cell = new PdfPCell(new Phrase(dataTable.Rows[i][j].ToString()));
+
+                        //Align the cell in the center
+                        cell.HorizontalAlignment = PdfPCell.ALIGN_CENTER;
+                        cell.VerticalAlignment = PdfPCell.ALIGN_CENTER;
+
+                        table.AddCell(cell);
+                    }
+                }
+
+                document.Add(table);
+                document.Close();
+
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
 
 
     }

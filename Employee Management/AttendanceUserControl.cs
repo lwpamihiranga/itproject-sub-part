@@ -16,7 +16,10 @@ namespace Employee_Management
     {
 
         public static int ID;
-        public int sortID;
+        public static int sortID;
+        public static string date;
+        public static string month;
+        public static String clickedSortType = null;
         public AttendanceUserControl1()
         {
             InitializeComponent();
@@ -179,23 +182,25 @@ namespace Employee_Management
         AttendanceClass at = new AttendanceClass();
         private void Button7_Click(object sender, EventArgs e)
         {
-                          
+
+            clickedSortType = "EmpID";
+            sortID = Int32.Parse(txtEmpIDReport.Text);
             DisplayAttendanceReport display = new DisplayAttendanceReport();
             display.ShowDialog();
+         
+        }
 
-            int sortID = Int32.Parse(txtEmpIDReport.Text);
+        private void BtnSortByDate_Click(object sender, EventArgs e)
+        {
+            clickedSortType = "Date";
+            date = txtDateReport.Text;
+            DisplayAttendanceReport display = new DisplayAttendanceReport();
+            display.ShowDialog();
+        }
 
-
-            at.SortByID(sortID);
-
-            AttendanceReport report = new AttendanceReport();
-            report.ShowDialog();
-
-            DataTable dt = new DataTable();
-            dataGridView.DataSource = dt;
-
-
-
+        private void BtnSortByMonthYear_Click(object sender, EventArgs e)
+        {
+            month = lblMonthReport.Text;
         }
     }
 }

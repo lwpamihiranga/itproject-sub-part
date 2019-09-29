@@ -192,7 +192,7 @@
         private RequestPortal requestPortal1;
         private System.Windows.Forms.Button button4;
         private HomeUserControl homeUserControl1;
-        private AttendanceUserControl attendanceUserControl1;
+       // private AttendanceUserControl attendanceUserControl1;
         //private Attendance attendance2;
     }
 }

@@ -188,7 +188,8 @@ namespace Employee_Management
 
             at.SortByID(sortID);
 
-
+            AttendanceReport report = new AttendanceReport();
+            report.ShowDialog();
 
             DataTable dt = new DataTable();
             dataGridView.DataSource = dt;

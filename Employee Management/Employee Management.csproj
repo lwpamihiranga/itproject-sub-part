@@ -72,12 +72,6 @@
       <DependentUpon>AttendanceUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\DatabaseHelper.cs" />
-    <Compile Include="CrystalReport1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="DisplayAttendanceReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,10 +115,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AttendanceUserControl.resx">
       <DependentUpon>AttendanceUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="DisplayAttendanceReport.resx">
       <DependentUpon>DisplayAttendanceReport.cs</DependentUpon>

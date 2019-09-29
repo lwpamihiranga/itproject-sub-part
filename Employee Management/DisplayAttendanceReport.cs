@@ -24,5 +24,10 @@ namespace Employee_Management
             DataTable dt = a.SortByID(attend.sortID);
             dataGridView.DataSource = dt;
         }
+
+        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

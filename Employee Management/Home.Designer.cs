@@ -188,12 +188,10 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button3;
-        //private Attendance attendance1;
         private RequestPortal requestPortal1;
         private System.Windows.Forms.Button button4;
         private HomeUserControl homeUserControl1;
-        private AttendanceUserControl1 attendanceUserControl1;
-        //private Attendance attendance2;
+        //private AttendanceUserControl1 attendanceUserControl1
     }
 }
 

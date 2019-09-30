@@ -10,24 +10,70 @@ using System.Windows.Forms;
 
 namespace Employee_Management
 {
+   
     public partial class DisplayAttendanceReport : Form
     {
+
+        public static DataTable getReport;
         public DisplayAttendanceReport()
         {
             InitializeComponent();
         }
-        AttendanceClass a = new AttendanceClass();
-        AttendanceUserControl1 attend = new AttendanceUserControl1();
+        
+       
         private void DisplayAttendanceReport_Load(object sender, EventArgs e)
         {
+           
+           if(AttendanceUserControl1.clickedSortType.Equals("EmpID"))
+            {
+                AttendanceClass a = new AttendanceClass();
+                DataTable dts = a.SortByID(AttendanceUserControl1.sortID);
+                dataGridView.DataSource = dts;
+                getReport = dts;
+            }
+           else if(AttendanceUserControl1.clickedSortType.Equals("Date"))
+            {
+                AttendanceClass a = new AttendanceClass();
+                DataTable dt = a.SortByDate(AttendanceUserControl1.date);
+                dataGridView.DataSource = dt;
+                getReport = dt;
+            }
+            else if(AttendanceUserControl1.clickedSortType.Equals("MonthYear"))
+            {
+                AttendanceClass a = new AttendanceClass();
+                DataTable dt = a.SortByIDDate(AttendanceUserControl1.month,AttendanceUserControl1.year);
+                dataGridView.DataSource = dt;
+                getReport = dt;
+            }
 
-            DataTable dt = a.SortByID(attend.sortID);
-            dataGridView.DataSource = dt;
+
+
+
+
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+        private void BtnDownload_Click(object sender, EventArgs e)
+        {
+            if (getReport == null)
+            {
+                MessageBox.Show("Coudn't create report because the Dataset is Empty");
+                return;
+            }
+            AttendanceClass reports = new AttendanceClass();
+            if (reports.createPDF(getReport, "E:\\report\\report.pdf"))
+            {
+                MessageBox.Show("Report was saved ");
+            }
+            else
+            {
+                MessageBox.Show("Something went wrong!");
+            }
+        
+    }
     }
 }

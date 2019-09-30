@@ -29,26 +29,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceUserControl1));
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnSortByMonthYear = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblMonthReport = new System.Windows.Forms.TextBox();
+            this.lblYearReport = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtDateReport = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnSortByDate = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtEmpIDReport = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.SortByEmployeeId = new System.Windows.Forms.Button();
+            this.btnSortByEmployeeId = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblAttendanceId = new System.Windows.Forms.Label();
@@ -76,18 +79,31 @@
             this.Edit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.Attendance.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(282, 57);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 31);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Attendance";
             // 
             // tabControl1
             // 
@@ -115,103 +131,130 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel9);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.panel10);
             this.panel1.Location = new System.Drawing.Point(6, 16);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(645, 278);
             this.panel1.TabIndex = 26;
             // 
-            // textBox2
+            // panel3
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(367, 189);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 26);
-            this.textBox2.TabIndex = 7;
+            this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnSortByMonthYear);
+            this.panel3.Controls.Add(this.label8);
+            this.panel3.Controls.Add(this.lblMonthReport);
+            this.panel3.Controls.Add(this.lblYearReport);
+            this.panel3.Controls.Add(this.label9);
+            this.panel3.Location = new System.Drawing.Point(20, 165);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(605, 53);
+            this.panel3.TabIndex = 28;
             // 
-            // panel9
+            // btnSortByMonthYear
             // 
-            this.panel9.BackColor = System.Drawing.Color.Maroon;
-            this.panel9.Controls.Add(this.textBox3);
-            this.panel9.Controls.Add(this.label7);
-            this.panel9.Controls.Add(this.button6);
-            this.panel9.Location = new System.Drawing.Point(20, 89);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(605, 57);
-            this.panel9.TabIndex = 27;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(108, 18);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 26);
-            this.textBox3.TabIndex = 9;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(11, 19);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 20);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Date:";
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(422, 9);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(160, 33);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Generate Report";
-            this.button6.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(284, 195);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 20);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Month";
+            this.btnSortByMonthYear.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSortByMonthYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortByMonthYear.ForeColor = System.Drawing.Color.White;
+            this.btnSortByMonthYear.Location = new System.Drawing.Point(422, 9);
+            this.btnSortByMonthYear.Name = "btnSortByMonthYear";
+            this.btnSortByMonthYear.Size = new System.Drawing.Size(160, 33);
+            this.btnSortByMonthYear.TabIndex = 29;
+            this.btnSortByMonthYear.Text = "Generate Report";
+            this.btnSortByMonthYear.UseVisualStyleBackColor = false;
+            this.btnSortByMonthYear.Click += new System.EventHandler(this.BtnSortByMonthYear_Click);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(69, 195);
+            this.label8.Location = new System.Drawing.Point(15, 22);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 20);
+            this.label8.Size = new System.Drawing.Size(47, 20);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Year";
+            this.label8.Text = "Year:";
             // 
-            // textBox1
+            // lblMonthReport
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(158, 195);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 26);
-            this.textBox1.TabIndex = 6;
+            this.lblMonthReport.BackColor = System.Drawing.Color.White;
+            this.lblMonthReport.Location = new System.Drawing.Point(286, 16);
+            this.lblMonthReport.Name = "lblMonthReport";
+            this.lblMonthReport.Size = new System.Drawing.Size(100, 26);
+            this.lblMonthReport.TabIndex = 7;
+            // 
+            // lblYearReport
+            // 
+            this.lblYearReport.BackColor = System.Drawing.Color.White;
+            this.lblYearReport.Location = new System.Drawing.Point(78, 16);
+            this.lblYearReport.Name = "lblYearReport";
+            this.lblYearReport.Size = new System.Drawing.Size(100, 26);
+            this.lblYearReport.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(212, 19);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(58, 20);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Month:";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel9.Controls.Add(this.txtDateReport);
+            this.panel9.Controls.Add(this.label7);
+            this.panel9.Controls.Add(this.btnSortByDate);
+            this.panel9.Location = new System.Drawing.Point(20, 89);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(605, 57);
+            this.panel9.TabIndex = 27;
+            // 
+            // txtDateReport
+            // 
+            this.txtDateReport.BackColor = System.Drawing.Color.White;
+            this.txtDateReport.Location = new System.Drawing.Point(147, 9);
+            this.txtDateReport.Name = "txtDateReport";
+            this.txtDateReport.Size = new System.Drawing.Size(100, 26);
+            this.txtDateReport.TabIndex = 9;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(26, 15);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(48, 20);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Date:";
+            // 
+            // btnSortByDate
+            // 
+            this.btnSortByDate.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSortByDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortByDate.ForeColor = System.Drawing.Color.White;
+            this.btnSortByDate.Location = new System.Drawing.Point(422, 9);
+            this.btnSortByDate.Name = "btnSortByDate";
+            this.btnSortByDate.Size = new System.Drawing.Size(160, 33);
+            this.btnSortByDate.TabIndex = 8;
+            this.btnSortByDate.Text = "Generate Report";
+            this.btnSortByDate.UseVisualStyleBackColor = false;
+            this.btnSortByDate.Click += new System.EventHandler(this.BtnSortByDate_Click);
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.Maroon;
+            this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel10.Controls.Add(this.txtEmpIDReport);
             this.panel10.Controls.Add(this.label2);
-            this.panel10.Controls.Add(this.SortByEmployeeId);
-            this.panel10.Location = new System.Drawing.Point(20, 27);
+            this.panel10.Controls.Add(this.btnSortByEmployeeId);
+            this.panel10.Location = new System.Drawing.Point(20, 16);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(605, 56);
             this.panel10.TabIndex = 26;
@@ -233,18 +276,18 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Employee ID:";
             // 
-            // SortByEmployeeId
+            // btnSortByEmployeeId
             // 
-            this.SortByEmployeeId.BackColor = System.Drawing.Color.RoyalBlue;
-            this.SortByEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SortByEmployeeId.ForeColor = System.Drawing.Color.White;
-            this.SortByEmployeeId.Location = new System.Drawing.Point(422, 5);
-            this.SortByEmployeeId.Name = "SortByEmployeeId";
-            this.SortByEmployeeId.Size = new System.Drawing.Size(160, 33);
-            this.SortByEmployeeId.TabIndex = 5;
-            this.SortByEmployeeId.Text = "Generate Report";
-            this.SortByEmployeeId.UseVisualStyleBackColor = false;
-            this.SortByEmployeeId.Click += new System.EventHandler(this.Button7_Click);
+            this.btnSortByEmployeeId.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnSortByEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortByEmployeeId.ForeColor = System.Drawing.Color.White;
+            this.btnSortByEmployeeId.Location = new System.Drawing.Point(422, 5);
+            this.btnSortByEmployeeId.Name = "btnSortByEmployeeId";
+            this.btnSortByEmployeeId.Size = new System.Drawing.Size(160, 33);
+            this.btnSortByEmployeeId.TabIndex = 5;
+            this.btnSortByEmployeeId.Text = "Generate Report";
+            this.btnSortByEmployeeId.UseVisualStyleBackColor = false;
+            this.btnSortByEmployeeId.Click += new System.EventHandler(this.Button7_Click);
             // 
             // tabPage2
             // 
@@ -456,18 +499,18 @@
             // 
             // dataGridView
             // 
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AttendId,
@@ -477,20 +520,20 @@
             this.LeftTime,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView.Location = new System.Drawing.Point(13, 51);
             this.dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView.Size = new System.Drawing.Size(646, 201);
             this.dataGridView.TabIndex = 8;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
@@ -559,29 +602,31 @@
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
-            // pictureBox1
+            // pictureBox3
             // 
-            this.pictureBox1.Image = global::Employee_Management.Properties.Resources.WhatsApp_Image_2019_09_30_at_9_28_20_AM;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(680, 151);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 17;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox3.Image = global::Employee_Management.Properties.Resources.WhatsApp_Image_2019_08_27_at_11_251;
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(124, 159);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
             // 
             // AttendanceUserControl1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox3);
             this.Name = "AttendanceUserControl1";
             this.Size = new System.Drawing.Size(683, 508);
             this.Load += new System.EventHandler(this.AttendanceUserControl_Load);
             this.tabControl1.ResumeLayout(false);
             this.Attendance.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
@@ -592,12 +637,16 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage Attendance;
         private System.Windows.Forms.TabPage tabPage2;
@@ -630,16 +679,17 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnSortByDate;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button SortByEmployeeId;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSortByEmployeeId;
+        private System.Windows.Forms.TextBox lblMonthReport;
+        private System.Windows.Forms.TextBox txtDateReport;
+        private System.Windows.Forms.TextBox lblYearReport;
         private System.Windows.Forms.TextBox txtEmpIDReport;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnSortByMonthYear;
     }
 }

@@ -32,13 +32,24 @@ namespace Employee_Management
         private void Home_Load(object sender, EventArgs e)
         {
 
-            pictureBox2.Image = Properties.Resources.sba;
+            pictureBox2.Image = Properties.Resources.admin;
             requestPortal1.Hide();
+
+
             attendanceUserControl1.Hide();
 
-          
+            attendanceUserControl1.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
+            homeUserControl1.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
+            requestPortal1.Anchor = (AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left | AnchorStyles.Bottom);
 
-          
+
+            pictureBox2.Anchor = (AnchorStyles.Top | AnchorStyles.Left );
+            pictureBox1.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right);
+             
+
+
+
+
 
         }
 

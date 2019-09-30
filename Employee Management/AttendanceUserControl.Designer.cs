@@ -29,10 +29,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceUserControl1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
@@ -48,8 +48,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnSortByDate = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtEmpIDReport = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnSortByEmployeeId = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -94,6 +94,9 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.Attendance);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
@@ -118,6 +121,9 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.LightGray;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel3);
@@ -130,6 +136,8 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.btnSortByMonthYear);
@@ -137,17 +145,18 @@
             this.panel3.Controls.Add(this.lblMonthReport);
             this.panel3.Controls.Add(this.lblYearReport);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(20, 165);
+            this.panel3.Location = new System.Drawing.Point(17, 185);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(605, 53);
             this.panel3.TabIndex = 28;
             // 
             // btnSortByMonthYear
             // 
+            this.btnSortByMonthYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSortByMonthYear.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSortByMonthYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSortByMonthYear.ForeColor = System.Drawing.Color.White;
-            this.btnSortByMonthYear.Location = new System.Drawing.Point(422, 9);
+            this.btnSortByMonthYear.Location = new System.Drawing.Point(429, 10);
             this.btnSortByMonthYear.Name = "btnSortByMonthYear";
             this.btnSortByMonthYear.Size = new System.Drawing.Size(160, 33);
             this.btnSortByMonthYear.TabIndex = 29;
@@ -157,9 +166,11 @@
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(15, 22);
+            this.label8.Location = new System.Drawing.Point(15, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 20);
             this.label8.TabIndex = 4;
@@ -167,25 +178,30 @@
             // 
             // lblMonthReport
             // 
+            this.lblMonthReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMonthReport.BackColor = System.Drawing.Color.White;
-            this.lblMonthReport.Location = new System.Drawing.Point(286, 16);
+            this.lblMonthReport.Location = new System.Drawing.Point(286, 14);
             this.lblMonthReport.Name = "lblMonthReport";
-            this.lblMonthReport.Size = new System.Drawing.Size(100, 26);
+            this.lblMonthReport.Size = new System.Drawing.Size(114, 26);
             this.lblMonthReport.TabIndex = 7;
             // 
             // lblYearReport
             // 
+            this.lblYearReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblYearReport.BackColor = System.Drawing.Color.White;
-            this.lblYearReport.Location = new System.Drawing.Point(78, 16);
+            this.lblYearReport.Location = new System.Drawing.Point(78, 14);
             this.lblYearReport.Name = "lblYearReport";
-            this.lblYearReport.Size = new System.Drawing.Size(100, 26);
+            this.lblYearReport.Size = new System.Drawing.Size(124, 26);
             this.lblYearReport.TabIndex = 6;
             // 
             // label9
             // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(212, 19);
+            this.label9.Location = new System.Drawing.Point(216, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(58, 20);
             this.label9.TabIndex = 1;
@@ -193,29 +209,37 @@
             // 
             // panel9
             // 
+            this.panel9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel9.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel9.Controls.Add(this.txtDateReport);
             this.panel9.Controls.Add(this.label7);
             this.panel9.Controls.Add(this.btnSortByDate);
-            this.panel9.Location = new System.Drawing.Point(20, 89);
+            this.panel9.Location = new System.Drawing.Point(17, 109);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(605, 57);
             this.panel9.TabIndex = 27;
             // 
             // txtDateReport
             // 
+            this.txtDateReport.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDateReport.BackColor = System.Drawing.Color.White;
-            this.txtDateReport.Location = new System.Drawing.Point(147, 9);
+            this.txtDateReport.Location = new System.Drawing.Point(147, 15);
             this.txtDateReport.Name = "txtDateReport";
-            this.txtDateReport.Size = new System.Drawing.Size(100, 26);
+            this.txtDateReport.Size = new System.Drawing.Size(214, 26);
             this.txtDateReport.TabIndex = 9;
             // 
             // label7
             // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(26, 15);
+            this.label7.Location = new System.Drawing.Point(15, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 20);
             this.label7.TabIndex = 6;
@@ -223,10 +247,11 @@
             // 
             // btnSortByDate
             // 
+            this.btnSortByDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSortByDate.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSortByDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSortByDate.ForeColor = System.Drawing.Color.White;
-            this.btnSortByDate.Location = new System.Drawing.Point(422, 9);
+            this.btnSortByDate.Location = new System.Drawing.Point(429, 11);
             this.btnSortByDate.Name = "btnSortByDate";
             this.btnSortByDate.Size = new System.Drawing.Size(160, 33);
             this.btnSortByDate.TabIndex = 8;
@@ -236,39 +261,47 @@
             // 
             // panel10
             // 
+            this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel10.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel10.Controls.Add(this.label1);
             this.panel10.Controls.Add(this.txtEmpIDReport);
-            this.panel10.Controls.Add(this.label2);
             this.panel10.Controls.Add(this.btnSortByEmployeeId);
-            this.panel10.Location = new System.Drawing.Point(20, 16);
+            this.panel10.Location = new System.Drawing.Point(17, 36);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(605, 56);
             this.panel10.TabIndex = 26;
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(15, 18);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 20);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "EmployeeID";
+            // 
             // txtEmpIDReport
             // 
+            this.txtEmpIDReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmpIDReport.BackColor = System.Drawing.Color.White;
-            this.txtEmpIDReport.Location = new System.Drawing.Point(147, 17);
+            this.txtEmpIDReport.Location = new System.Drawing.Point(147, 15);
             this.txtEmpIDReport.Name = "txtEmpIDReport";
-            this.txtEmpIDReport.Size = new System.Drawing.Size(100, 26);
+            this.txtEmpIDReport.Size = new System.Drawing.Size(214, 26);
             this.txtEmpIDReport.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(104, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Employee ID:";
             // 
             // btnSortByEmployeeId
             // 
+            this.btnSortByEmployeeId.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSortByEmployeeId.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSortByEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSortByEmployeeId.ForeColor = System.Drawing.Color.White;
-            this.btnSortByEmployeeId.Location = new System.Drawing.Point(422, 5);
+            this.btnSortByEmployeeId.Location = new System.Drawing.Point(429, 10);
             this.btnSortByEmployeeId.Name = "btnSortByEmployeeId";
             this.btnSortByEmployeeId.Size = new System.Drawing.Size(160, 33);
             this.btnSortByEmployeeId.TabIndex = 5;
@@ -292,6 +325,9 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblAttendanceId);
             this.panel2.Controls.Add(this.lblEmployeeId);
@@ -319,6 +355,8 @@
             // 
             // lblEmployeeId
             // 
+            this.lblEmployeeId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEmployeeId.AutoSize = true;
             this.lblEmployeeId.BackColor = System.Drawing.Color.White;
             this.lblEmployeeId.ForeColor = System.Drawing.Color.Black;
@@ -330,6 +368,8 @@
             // 
             // lblEnterLeftTime
             // 
+            this.lblEnterLeftTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEnterLeftTime.AutoSize = true;
             this.lblEnterLeftTime.ForeColor = System.Drawing.Color.Black;
             this.lblEnterLeftTime.Location = new System.Drawing.Point(182, 165);
@@ -340,6 +380,8 @@
             // 
             // txtEmployeeId
             // 
+            this.txtEmployeeId.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtEmployeeId.Location = new System.Drawing.Point(185, 30);
             this.txtEmployeeId.Name = "txtEmployeeId";
             this.txtEmployeeId.Size = new System.Drawing.Size(200, 24);
@@ -347,6 +389,8 @@
             // 
             // lblInTime
             // 
+            this.lblInTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblInTime.AutoSize = true;
             this.lblInTime.BackColor = System.Drawing.Color.DarkGray;
             this.lblInTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -358,6 +402,8 @@
             // 
             // lblDate
             // 
+            this.lblDate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDate.AutoSize = true;
             this.lblDate.BackColor = System.Drawing.Color.White;
             this.lblDate.ForeColor = System.Drawing.Color.Black;
@@ -369,10 +415,12 @@
             // 
             // btnInsert
             // 
+            this.btnInsert.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnInsert.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(27, 225);
+            this.btnInsert.Location = new System.Drawing.Point(57, 225);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(335, 33);
             this.btnInsert.TabIndex = 5;
@@ -382,6 +430,8 @@
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(185, 73);
             this.dateTimePicker1.Name = "dateTimePicker1";
@@ -390,6 +440,8 @@
             // 
             // lblLeftTme
             // 
+            this.lblLeftTme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblLeftTme.AutoSize = true;
             this.lblLeftTme.BackColor = System.Drawing.Color.White;
             this.lblLeftTme.ForeColor = System.Drawing.Color.Black;
@@ -401,6 +453,8 @@
             // 
             // lblArrivedTime
             // 
+            this.lblArrivedTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblArrivedTime.AutoSize = true;
             this.lblArrivedTime.BackColor = System.Drawing.Color.White;
             this.lblArrivedTime.ForeColor = System.Drawing.Color.Black;
@@ -431,6 +485,8 @@
             // 
             // dateTimePickerSearch
             // 
+            this.dateTimePickerSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePickerSearch.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerSearch.Location = new System.Drawing.Point(368, 17);
@@ -462,6 +518,8 @@
             // 
             // btnViewAll
             // 
+            this.btnViewAll.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnViewAll.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnViewAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewAll.ForeColor = System.Drawing.Color.White;
@@ -486,18 +544,22 @@
             // 
             // dataGridView
             // 
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AttendId,
@@ -507,20 +569,20 @@
             this.LeftTime,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridView.Location = new System.Drawing.Point(13, 51);
             this.dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle24;
             this.dataGridView.Size = new System.Drawing.Size(646, 201);
             this.dataGridView.TabIndex = 8;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
@@ -537,7 +599,6 @@
             this.EmpId.HeaderText = "EmpId";
             this.EmpId.Name = "EmpId";
             this.EmpId.ReadOnly = true;
-            this.EmpId.Width = 75;
             // 
             // Date
             // 
@@ -552,7 +613,6 @@
             this.ArrivedTime.HeaderText = "Arrived Time";
             this.ArrivedTime.Name = "ArrivedTime";
             this.ArrivedTime.ReadOnly = true;
-            this.ArrivedTime.Width = 125;
             // 
             // LeftTime
             // 
@@ -579,6 +639,7 @@
             // 
             // btnSearch
             // 
+            this.btnSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSearch.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSearch.Image = ((System.Drawing.Image)(resources.GetObject("btnSearch.Image")));
             this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -591,10 +652,12 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Employee_Management.Properties.Resources.WhatsApp_Image_2019_09_30_at_9_28_20_AM;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(680, 151);
+            this.pictureBox1.Size = new System.Drawing.Size(682, 151);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
@@ -670,9 +733,9 @@
         private System.Windows.Forms.TextBox txtDateReport;
         private System.Windows.Forms.TextBox lblYearReport;
         private System.Windows.Forms.TextBox txtEmpIDReport;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnSortByMonthYear;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }

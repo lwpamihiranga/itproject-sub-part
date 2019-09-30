@@ -459,10 +459,10 @@
             this.tabPage3.Controls.Add(this.textBox5);
             this.tabPage3.Controls.Add(this.textBox3);
             this.tabPage3.Controls.Add(this.comboBox1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(675, 315);
+            this.tabPage3.Size = new System.Drawing.Size(675, 317);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Generate Reports";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -473,7 +473,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.BackColor = System.Drawing.Color.RoyalBlue;
             this.button6.ForeColor = System.Drawing.SystemColors.Control;
-            this.button6.Location = new System.Drawing.Point(5, 284);
+            this.button6.Location = new System.Drawing.Point(5, 281);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(666, 38);
             this.button6.TabIndex = 5;

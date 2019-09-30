@@ -35,6 +35,7 @@ namespace Employee_Management
             pictureBox2.Image = Properties.Resources.admin;
             requestPortal1.Hide();
 
+            
 
             attendanceUserControl1.Hide();
 
@@ -44,8 +45,10 @@ namespace Employee_Management
 
 
             pictureBox2.Anchor = (AnchorStyles.Top | AnchorStyles.Left );
-            pictureBox1.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom | AnchorStyles.Right);
-             
+            pictureBox1.Anchor = (AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Bottom);
+
+            this.MinimumSize = new System.Drawing.Size(1000, 550);
+
 
 
 

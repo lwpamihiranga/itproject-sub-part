@@ -157,37 +157,43 @@
 
 
 
+
+                        
             
-       
+           
+           
+         
+            
+                        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+                        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+                        this.BackColor = System.Drawing.SystemColors.Control;
+                        this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+                        this.ClientSize = new System.Drawing.Size(915, 510);
+                        this.Controls.Add(this.attendanceUserControl1);
+                        this.Controls.Add(this.homeUserControl1);
+                        this.Controls.Add(this.button4);
+                        this.Controls.Add(this.requestPortal1);
+                        this.Controls.Add(this.button3);
+                        this.Controls.Add(this.pictureBox3);
+                        this.Controls.Add(this.button2);
+                        this.Controls.Add(this.pictureBox2);
+                        this.Controls.Add(this.pictureBox1);
+                        this.Cursor = System.Windows.Forms.Cursors.Hand;
+                        this.DoubleBuffered = true;
+                        this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+                        this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Sizable;
+                        this.MaximizeBox = true;
+                        this.Name = "Home";
+                        this.Text = "Home";
+                        this.Load += new System.EventHandler(this.Home_Load);
+                        ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+                        ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+                        ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+                        this.ResumeLayout(false);
+                        this.PerformLayout();
 
 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(915, 510);
-            this.Controls.Add(this.attendanceUserControl1);
-            this.Controls.Add(this.homeUserControl1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.requestPortal1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = true;
-            this.Name = "Home";
-            this.Text = "Home";
-            this.Load += new System.EventHandler(this.Home_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+
 
         }
 

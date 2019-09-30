@@ -228,7 +228,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(26, 15);
+            this.label7.Location = new System.Drawing.Point(24, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 20);
             this.label7.TabIndex = 6;
@@ -262,15 +262,15 @@
             // txtEmpIDReport
             // 
             this.txtEmpIDReport.BackColor = System.Drawing.Color.White;
-            this.txtEmpIDReport.Location = new System.Drawing.Point(147, 17);
+            this.txtEmpIDReport.Location = new System.Drawing.Point(147, 11);
             this.txtEmpIDReport.Name = "txtEmpIDReport";
-            this.txtEmpIDReport.Size = new System.Drawing.Size(100, 26);
+            this.txtEmpIDReport.Size = new System.Drawing.Size(264, 26);
             this.txtEmpIDReport.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 24);
+            this.label2.Location = new System.Drawing.Point(15, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 20);
             this.label2.TabIndex = 6;
@@ -281,7 +281,7 @@
             this.btnSortByEmployeeId.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnSortByEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSortByEmployeeId.ForeColor = System.Drawing.Color.White;
-            this.btnSortByEmployeeId.Location = new System.Drawing.Point(422, 5);
+            this.btnSortByEmployeeId.Location = new System.Drawing.Point(422, 8);
             this.btnSortByEmployeeId.Name = "btnSortByEmployeeId";
             this.btnSortByEmployeeId.Size = new System.Drawing.Size(160, 33);
             this.btnSortByEmployeeId.TabIndex = 5;

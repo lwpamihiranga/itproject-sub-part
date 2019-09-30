@@ -146,6 +146,8 @@ namespace Employee_Management
 
         private void TabPage3_Click(object sender, EventArgs e)
         {
+            dateTimePickerSearch.Format = DateTimePickerFormat.Custom;
+            dateTimePickerSearch.CustomFormat = "dd-MM-yyyy";
             AttendanceClass a = new AttendanceClass();
             DataTable dt = a.Select();
             dataGridView.DataSource = dt;

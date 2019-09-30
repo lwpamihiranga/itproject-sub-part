@@ -73,7 +73,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView.Location = new System.Drawing.Point(54, 75);
+            this.dataGridView.Location = new System.Drawing.Point(89, 77);
             this.dataGridView.Name = "dataGridView";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -87,7 +87,7 @@
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridView.Size = new System.Drawing.Size(703, 265);
+            this.dataGridView.Size = new System.Drawing.Size(459, 265);
             this.dataGridView.TabIndex = 9;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);
             // 
@@ -131,7 +131,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(257, 26);
+            this.label1.Location = new System.Drawing.Point(187, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(256, 33);
             this.label1.TabIndex = 10;
@@ -140,9 +140,9 @@
             // 
             // btnDownload
             // 
-            this.btnDownload.Location = new System.Drawing.Point(54, 372);
+            this.btnDownload.Location = new System.Drawing.Point(81, 367);
             this.btnDownload.Name = "btnDownload";
-            this.btnDownload.Size = new System.Drawing.Size(714, 47);
+            this.btnDownload.Size = new System.Drawing.Size(467, 51);
             this.btnDownload.TabIndex = 11;
             this.btnDownload.Text = "Download Report";
             this.btnDownload.UseVisualStyleBackColor = true;
@@ -153,7 +153,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(654, 450);
             this.Controls.Add(this.btnDownload);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView);

@@ -84,7 +84,7 @@ namespace Employee_Management
                 {
                     txtUpdateEmpID.Text = row["EmpID"].ToString();
                     lblInTime.Text = row["inTime"].ToString();
-                    lblLeftTime.Text = row["outTime"].ToString();
+                    //lblLeftTime.Text = row["outTime"].ToString();
                     dateTimePickerUpdate.Text = row["date"].ToString();
 
                 }

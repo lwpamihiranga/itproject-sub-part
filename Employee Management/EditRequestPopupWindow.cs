@@ -30,13 +30,29 @@ namespace Employee_Management
 
             foreach (DataRow row in dt.Rows)
             {
+
+                try
+                {
                     string name = row["ReqID"].ToString();
                     txtID.Text = row["EmpID"].ToString();
                     txtHours.Text = row["LeaveHours"].ToString();
                     txtDepartment.Text = row["Department"].ToString();
                     txtDescription.Text = row["Description"].ToString();
 
-                    dateTimePicker1.Text = row["Date"].ToString();
+                    DateTime oDate = Convert.ToDateTime(row["Date"].ToString());
+
+                    DateTime a = oDate.Date;
+
+
+
+                    dateTimePicker1.Value = a;
+
+                }
+                catch(Exception edada)
+                {
+
+                }
+
 
             }
 

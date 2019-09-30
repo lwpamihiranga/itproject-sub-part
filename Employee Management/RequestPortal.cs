@@ -454,5 +454,80 @@ namespace Employee_Management
         {
 
         }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            List<String> dates = new List<String>();
+            List<int> hours = new List<int>();
+            List<String> dept = new List<String>();
+            List<String> desc = new List<String>();
+            List<String> ids = new List<String>();
+
+            dates.Add("9/30/2019");
+            dates.Add("9/10/2019");
+            dates.Add("9/15/2019");
+            dates.Add("10/01/2019");
+            dates.Add("10/12/2019");
+            dates.Add("10/23/2019");
+            dates.Add("9/05/2019");
+            dates.Add("10/02/2019");
+            dates.Add("9/03/2019");
+            dates.Add("10/28/2019");
+
+
+            hours.Add(5);
+            hours.Add(8);
+            hours.Add(6);
+            hours.Add(5);
+            hours.Add(4);
+            hours.Add(8);
+            hours.Add(2);
+            hours.Add(6);
+            hours.Add(4);
+            hours.Add(8);
+
+            dept.Add("IT");
+            dept.Add("SE");
+            dept.Add("SE");
+            dept.Add("CN");
+            dept.Add("IT");
+            dept.Add("IT");
+            dept.Add("CS");
+            dept.Add("CN");
+            dept.Add("SE");
+            dept.Add("CS");
+
+
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+            desc.Add("I need to go to hospital to take medicine");
+
+
+            ids.Add("1");
+            ids.Add("2");
+            ids.Add("3");
+            ids.Add("2");
+            ids.Add("3");
+            ids.Add("1");
+            ids.Add("4");
+            ids.Add("5");
+            ids.Add("5");
+            ids.Add("3");
+
+            DatabaseHelper helper = new DatabaseHelper();
+
+            for (int i = 0; i < 10; i++)
+            {
+                helper.insert(ids.ElementAt(i),dates.ElementAt(i),hours.ElementAt(i),dept.ElementAt(i),desc.ElementAt(i));
+            }
+            MessageBox.Show("Inserted");
+        }
     }
 }

@@ -60,19 +60,27 @@ namespace Employee_Management
                  
                 if ( result==DialogResult.Yes)
                 {
-                      ID = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
+                    try 
+                    {
+                        ID = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
 
-                      bool success = a.Delete(ID);
+                        bool success = a.Delete(ID);
 
 
                         if (success == true)
-                         {
-                             MessageBox.Show("Deleted successfully");
-                         }
+                        {
+                            MessageBox.Show("Deleted successfully");
+                        }
                         else
-                         {
+                        {
                             MessageBox.Show("Cannot delete");
-                         }
+                        }
+                    }
+                    catch(Exception eeeee)
+                    {
+
+                    }
+                     
 
                 }
 
@@ -214,6 +222,21 @@ namespace Employee_Management
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AttendanceClass ac = new AttendanceClass();
+
+            String[] time = { "08:15", "08:25", "08:55", "09:15", "08:00", "08:22", "09:05", "08:05", "09:20", "08:35"};
+            String[] date = { "9-10-2019", "11-10-2019", "15-10-2019", "12-11-2019", "12-10-2019", "10-09-2019", "27-10-2019", "25-11-2019", "5-11-2019", "12-12-2019" };
+            int[] id = {1,2,1,4,5,3,7,4,2,1};
+
+            for(int x  = 0; x < 10; x++)
+            {
+                ac.Insert(id[x], date[x], time[x]);
+            }
 
         }
     }

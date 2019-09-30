@@ -66,6 +66,43 @@ namespace Employee_Management
             }
             return isSuccess;
         }
+        public bool Insert(int empID,String date,String time)
+        {
+            bool isSuccess = false;
+
+            SqlConnection conn = new SqlConnection(myConnectionString);
+
+            try
+            {
+                string sql = "INSERT INTO Attendance(EmpID,date,inTime) VALUES (@EmpID,@date,@inTime)";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+          
+                cmd.Parameters.AddWithValue("@EmpID", empID);
+                cmd.Parameters.AddWithValue("@date", date);
+                cmd.Parameters.AddWithValue("@inTime", time);
+
+                conn.Open();
+                int rows = cmd.ExecuteNonQuery();
+                if (rows > 0)
+                {
+                    isSuccess = true;
+                }
+                else
+                {
+                    isSuccess = false;
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+
+            }
+            return isSuccess;
+        }
 
 
         public DataTable Select()

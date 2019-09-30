@@ -40,9 +40,17 @@ namespace Employee_Management
             lblLeftTime.Text = DateTime.Now.ToString("HH:mm");
             a.LeftTime = lblLeftTime.Text;
 
+            DateTime date1 = DateTime.Parse(lblInTime.Text);
+            DateTime date2 = DateTime.Parse(lblLeftTime.Text);
+            string minutes = (date2.Subtract(date1).TotalMinutes).ToString();
+
+         
 
 
-            bool success = a.Update(a,AttendanceUserControl1.ID);
+
+            
+
+            bool success = a.Update(a,AttendanceUserControl1.ID,minutes);
 
             if (success == true)
             {
@@ -59,19 +67,34 @@ namespace Employee_Management
 
         private void UpdateAttendance_Load(object sender, EventArgs e)
         {
-            
-                lblOutTime.Text = DateTime.Now.ToString("HH:mm");
-                a.LeftTime = lblOutTime.Text;
 
-                AttendanceClass cl = new AttendanceClass();
-                DataTable dt = cl.SelectByID(AttendanceUserControl1.ID);
+            dateTimePickerUpdate.Format = DateTimePickerFormat.Custom;
+            dateTimePickerUpdate.CustomFormat = "dd-MM-yyyy";
 
-                foreach (DataRow row in dt.Rows)
+
+            lblOutTime.Text = DateTime.Now.ToString("HH:mm");
+            a.LeftTime = lblOutTime.Text;
+
+            AttendanceClass cl = new AttendanceClass();
+            DataTable dt = cl.SelectByID(AttendanceUserControl1.ID);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                try
                 {
                     txtUpdateEmpID.Text = row["EmpID"].ToString();
                     lblInTime.Text = row["inTime"].ToString();
-                   lblLeftTime.Text = row["outTime"].ToString();
+                    lblLeftTime.Text = row["outTime"].ToString();
                     dateTimePickerUpdate.Text = row["date"].ToString();
+
+                }
+                catch (Exception exx)
+                {
+
+                }
+            
+        
+                    
 
             }
            

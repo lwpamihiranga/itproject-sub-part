@@ -23,13 +23,7 @@ namespace Employee_Management
        
         private void DisplayAttendanceReport_Load(object sender, EventArgs e)
         {
-            /* at.SortByID(sortID);
-             DataTable dt = new DataTable();
-
-             adapter2.Fill(dt);
-
-             dataGridView.DataSource = dt;
-           */
+           
            if(AttendanceUserControl1.clickedSortType.Equals("EmpID"))
             {
                 AttendanceClass a = new AttendanceClass();
@@ -44,10 +38,18 @@ namespace Employee_Management
                 dataGridView.DataSource = dt;
                 getReport = dt;
             }
-            
+            else if(AttendanceUserControl1.clickedSortType.Equals("MonthYear"))
+            {
+                AttendanceClass a = new AttendanceClass();
+                DataTable dt = a.SortByIDDate(AttendanceUserControl1.month,AttendanceUserControl1.year);
+                dataGridView.DataSource = dt;
+                getReport = dt;
+            }
 
-           
-            
+
+
+
+
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

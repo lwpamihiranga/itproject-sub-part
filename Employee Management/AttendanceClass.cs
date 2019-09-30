@@ -185,32 +185,21 @@ namespace Employee_Management
             return dt;
         }
 
-        public DataTable SortByIDDate(int sortID)
+        public DataTable SortByIDDate(String month,String year)
         {
+
+            String sampleDate = month + "-" + year;
+
             SqlConnection conn = new SqlConnection(myConnectionString);
-            String mystring = "SELECT date FROM Attendance WHERE date=" + AttendanceUserControl1.month;
             DataTable dt = new DataTable();
-            string[] birthday = mystring.Split('/');
-            int year, month, day;
 
-            int.TryParse(birthday[0], out day);
-            int.TryParse(birthday[1], out month);
-            int.TryParse(birthday[2], out year);
-
-            String month1 = year.ToString();
             try
             {
-                // SqlDataAdapter adapter = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE AttendID = " + sortID);
-                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE EmpID = " + sortID;
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                SqlDataAdapter adapter2 = new SqlDataAdapter(cmd);
+                String mystring = "SELECT EmpID,date,inTime,outTime FROM Attendance WHERE date LIKE '%" + sampleDate + "'";
+                SqlCommand cmd = new SqlCommand(mystring, conn);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                 conn.Open();
-                adapter2.Fill(dt);
-
-
-
-                // return dt;
-
+                adapter.Fill(dt);
             }
             catch (Exception e)
             {
@@ -224,7 +213,7 @@ namespace Employee_Management
             return dt;
         }
 
-        public bool Update(AttendanceClass a,int id)
+        public bool Update(AttendanceClass a,int id,String minutes)
         {
             bool isSuccess = false;
 
@@ -232,7 +221,7 @@ namespace Employee_Management
 
             try
             {
-                string sql = "UPDATE Attendance SET EmpID=@EmpID,date=@date,inTime=@inTime,outTime=@outTime WHERE AttendID=@AttendID";
+                string sql = "UPDATE Attendance SET EmpID=@EmpID,date=@date,inTime=@inTime,outTime=@outTime,hoursWorked=@workedTime WHERE AttendID=@AttendID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
 
@@ -241,6 +230,7 @@ namespace Employee_Management
                 cmd.Parameters.AddWithValue("@inTime", a.ArrivedTime);
                 cmd.Parameters.AddWithValue("@outTime", a.LeftTime);
                 cmd.Parameters.AddWithValue("@AttendID", id);
+                cmd.Parameters.AddWithValue("@workedTime", Int32.Parse(minutes));
 
 
                 conn.Open();

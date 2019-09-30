@@ -34,7 +34,6 @@
             this.txtUpdateEmpID = new System.Windows.Forms.TextBox();
             this.lblAttendanceId = new System.Windows.Forms.Label();
             this.lblEmployeeId = new System.Windows.Forms.Label();
-            this.txtEmployeeId = new System.Windows.Forms.TextBox();
             this.lblInTime = new System.Windows.Forms.Label();
             this.lblDate = new System.Windows.Forms.Label();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -53,7 +52,6 @@
             this.panel2.Controls.Add(this.txtUpdateEmpID);
             this.panel2.Controls.Add(this.lblAttendanceId);
             this.panel2.Controls.Add(this.lblEmployeeId);
-            this.panel2.Controls.Add(this.txtEmployeeId);
             this.panel2.Controls.Add(this.lblInTime);
             this.panel2.Controls.Add(this.lblDate);
             this.panel2.Controls.Add(this.btnUpdate);
@@ -71,10 +69,11 @@
             this.lblOutTime.AutoSize = true;
             this.lblOutTime.BackColor = System.Drawing.Color.DarkGray;
             this.lblOutTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblOutTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblOutTime.ForeColor = System.Drawing.Color.Black;
             this.lblOutTime.Location = new System.Drawing.Point(180, 191);
             this.lblOutTime.Name = "lblOutTime";
-            this.lblOutTime.Size = new System.Drawing.Size(2, 15);
+            this.lblOutTime.Size = new System.Drawing.Size(2, 20);
             this.lblOutTime.TabIndex = 15;
             // 
             // lblLeftTime
@@ -88,9 +87,10 @@
             // 
             // txtUpdateEmpID
             // 
-            this.txtUpdateEmpID.Location = new System.Drawing.Point(185, 34);
+            this.txtUpdateEmpID.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUpdateEmpID.Location = new System.Drawing.Point(185, 37);
             this.txtUpdateEmpID.Name = "txtUpdateEmpID";
-            this.txtUpdateEmpID.Size = new System.Drawing.Size(200, 20);
+            this.txtUpdateEmpID.Size = new System.Drawing.Size(200, 24);
             this.txtUpdateEmpID.TabIndex = 13;
             // 
             // lblAttendanceId
@@ -113,22 +113,16 @@
             this.lblEmployeeId.TabIndex = 1;
             this.lblEmployeeId.Text = "Employee Id:";
             // 
-            // txtEmployeeId
-            // 
-            this.txtEmployeeId.Location = new System.Drawing.Point(185, 30);
-            this.txtEmployeeId.Name = "txtEmployeeId";
-            this.txtEmployeeId.Size = new System.Drawing.Size(200, 20);
-            this.txtEmployeeId.TabIndex = 6;
-            // 
             // lblInTime
             // 
             this.lblInTime.AutoSize = true;
             this.lblInTime.BackColor = System.Drawing.Color.DarkGray;
             this.lblInTime.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblInTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInTime.ForeColor = System.Drawing.Color.Black;
             this.lblInTime.Location = new System.Drawing.Point(180, 135);
             this.lblInTime.Name = "lblInTime";
-            this.lblInTime.Size = new System.Drawing.Size(2, 15);
+            this.lblInTime.Size = new System.Drawing.Size(2, 20);
             this.lblInTime.TabIndex = 10;
             // 
             // lblDate
@@ -159,10 +153,11 @@
             // dateTimePickerUpdate
             // 
             this.dateTimePickerUpdate.Enabled = false;
-            this.dateTimePickerUpdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerUpdate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePickerUpdate.Location = new System.Drawing.Point(185, 87);
             this.dateTimePickerUpdate.Name = "dateTimePickerUpdate";
-            this.dateTimePickerUpdate.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerUpdate.Size = new System.Drawing.Size(200, 24);
             this.dateTimePickerUpdate.TabIndex = 7;
             // 
             // lblLeftTme
@@ -210,7 +205,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblAttendanceId;
         private System.Windows.Forms.Label lblEmployeeId;
-        private System.Windows.Forms.TextBox txtEmployeeId;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.DateTimePicker dateTimePickerUpdate;

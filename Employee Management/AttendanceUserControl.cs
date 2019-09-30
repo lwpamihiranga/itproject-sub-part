@@ -18,7 +18,8 @@ namespace Employee_Management
         public static int ID;
         public static int sortID;
         public static string date;
-        public static string month;
+        public static String month;
+        public static String year;
         public static String clickedSortType = null;
         public AttendanceUserControl1()
         {
@@ -27,6 +28,9 @@ namespace Employee_Management
 
         private void AttendanceUserControl_Load(object sender, EventArgs e)
         {
+
+            dateTimePicker1.Format = DateTimePickerFormat.Custom;
+            dateTimePicker1.CustomFormat = "dd-MM-yyyy";
             AttendanceClass a = new AttendanceClass();
             DataTable dt = a.Select();
             dataGridView.DataSource = dt;
@@ -200,7 +204,12 @@ namespace Employee_Management
 
         private void BtnSortByMonthYear_Click(object sender, EventArgs e)
         {
+            clickedSortType = "MonthYear";
             month = lblMonthReport.Text;
+            year = lblYearReport.Text;
+
+            DisplayAttendanceReport display = new DisplayAttendanceReport();
+            display.ShowDialog();
         }
     }
 }

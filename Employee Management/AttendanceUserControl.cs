@@ -28,12 +28,16 @@ namespace Employee_Management
 
         private void AttendanceUserControl_Load(object sender, EventArgs e)
         {
+            dateTimePickerSearch.Format= DateTimePickerFormat.Custom;
+            dateTimePickerSearch.CustomFormat = "dd-MM-yyyy";
 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
             dateTimePicker1.CustomFormat = "dd-MM-yyyy";
+
             AttendanceClass a = new AttendanceClass();
             DataTable dt = a.Select();
             dataGridView.DataSource = dt;
+
             lblInTime.Text = DateTime.Now.ToString("HH:mm");
             a.ArrivedTime = lblInTime.Text;
         }
@@ -41,17 +45,13 @@ namespace Employee_Management
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
-
-
             AttendanceClass a = new AttendanceClass();
             if (e.ColumnIndex == dataGridView.Columns["Edit"].Index && e.RowIndex >= 0)
             {
                 ID = Convert.ToInt32(dataGridView.Rows[dataGridView.CurrentRow.Index].Cells[2].Value);
                 UpdateAttendance update = new UpdateAttendance();
                 update.ShowDialog();
-                
-                
-
+                             
             }
 
             if (e.ColumnIndex == dataGridView.Columns["Delete"].Index && e.RowIndex >= 0)
@@ -79,14 +79,13 @@ namespace Employee_Management
             }
 
         }
+
         AttendanceClass a = new AttendanceClass();
         int Id = 0;
 
         private void BtnInsert_Click(object sender, EventArgs e)
         {
-            if (txtEmployeeId.Text == string.Empty
-               //txtArrivedTime.Text == string.Empty
-               )
+            if (txtEmployeeId.Text == string.Empty)
             {
                 MessageBox.Show("Plaese fill the empty fields!");
             }
@@ -97,18 +96,12 @@ namespace Employee_Management
             /*  else if(txtArrivedTime.Text == string.Empty)
               {
                   MessageBox.Show("Plaese enter the arrived time");
+              }*/
 
-              }
-              */
             else if (!int.TryParse(txtEmployeeId.Text, out Id))
             {
                 MessageBox.Show("Employee ID is invaid");
             }
-
-
-
-
-
 
             else
             {
@@ -121,14 +114,7 @@ namespace Employee_Management
                 //a.ArrivedTime = lblInTime.Text;
                 // a.ArrivedTime = txtArrivedTime.Text;
                 // a.LeftTime = int.Parse(txtLeaftTime.Text);
-
-                /* Type dataType = a.EmployeeId.GetType();
-                 if (!dataType.Equals(typeof(int)))
-                 {
-                     MessageBox.Show("Invalid Employee Id");
-                 }
-                 */
-
+               
                 bool success = a.Insert(a);
                 if (success == true)
                 {
@@ -146,22 +132,32 @@ namespace Employee_Management
 
         private void TabPage3_Click(object sender, EventArgs e)
         {
-            dateTimePickerSearch.Format = DateTimePickerFormat.Custom;
-            dateTimePickerSearch.CustomFormat = "dd-MM-yyyy";
+           
             AttendanceClass a = new AttendanceClass();
             DataTable dt = a.Select();
             dataGridView.DataSource = dt;
         }
 
         static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
-
+        int Id2 = 0;
         private void BtnSearch_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection(myConnectionString);
+
+            if (txtSearch.Text == string.Empty)
+            {
+                MessageBox.Show("Please enter an employee ID");
+                return;
+            }
+            else if(!int.TryParse(txtSearch.Text, out Id2))
+            {
+                MessageBox.Show("Invalid employee ID");
+                return;
+            }
+
             int key = Int32.Parse(txtSearch.Text);
             string searchDate = dateTimePickerSearch.Text;
-
-           
+                     
             SqlDataAdapter adapter1 = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE  EmpID=" + key + "AND date='" + searchDate + "'", conn);
           
             DataTable dt = new DataTable();
@@ -191,6 +187,7 @@ namespace Employee_Management
 
             clickedSortType = "EmpID";
             sortID = Int32.Parse(txtEmpIDReport.Text);
+
             DisplayAttendanceReport display = new DisplayAttendanceReport();
             display.ShowDialog();
          
@@ -200,6 +197,7 @@ namespace Employee_Management
         {
             clickedSortType = "Date";
             date = txtDateReport.Text;
+
             DisplayAttendanceReport display = new DisplayAttendanceReport();
             display.ShowDialog();
         }

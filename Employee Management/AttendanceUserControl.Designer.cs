@@ -29,10 +29,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AttendanceUserControl1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Attendance = new System.Windows.Forms.TabPage();
@@ -97,6 +96,7 @@
             this.tabControl1.Controls.Add(this.Attendance);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(0, 165);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -105,20 +105,20 @@
             // 
             // Attendance
             // 
+            this.Attendance.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Attendance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Attendance.Controls.Add(this.panel1);
             this.Attendance.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Attendance.Location = new System.Drawing.Point(4, 22);
+            this.Attendance.Location = new System.Drawing.Point(4, 27);
             this.Attendance.Name = "Attendance";
             this.Attendance.Padding = new System.Windows.Forms.Padding(3);
-            this.Attendance.Size = new System.Drawing.Size(672, 317);
+            this.Attendance.Size = new System.Drawing.Size(672, 312);
             this.Attendance.TabIndex = 0;
             this.Attendance.Text = "Attendance";
-            this.Attendance.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel9);
@@ -137,7 +137,7 @@
             this.panel3.Controls.Add(this.lblMonthReport);
             this.panel3.Controls.Add(this.lblYearReport);
             this.panel3.Controls.Add(this.label9);
-            this.panel3.Location = new System.Drawing.Point(20, 165);
+            this.panel3.Location = new System.Drawing.Point(20, 194);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(605, 53);
             this.panel3.TabIndex = 28;
@@ -198,7 +198,7 @@
             this.panel9.Controls.Add(this.txtDateReport);
             this.panel9.Controls.Add(this.label7);
             this.panel9.Controls.Add(this.btnSortByDate);
-            this.panel9.Location = new System.Drawing.Point(20, 89);
+            this.panel9.Location = new System.Drawing.Point(20, 111);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(605, 57);
             this.panel9.TabIndex = 27;
@@ -206,9 +206,9 @@
             // txtDateReport
             // 
             this.txtDateReport.BackColor = System.Drawing.Color.White;
-            this.txtDateReport.Location = new System.Drawing.Point(147, 9);
+            this.txtDateReport.Location = new System.Drawing.Point(125, 16);
             this.txtDateReport.Name = "txtDateReport";
-            this.txtDateReport.Size = new System.Drawing.Size(100, 26);
+            this.txtDateReport.Size = new System.Drawing.Size(286, 26);
             this.txtDateReport.TabIndex = 9;
             // 
             // label7
@@ -241,7 +241,7 @@
             this.panel10.Controls.Add(this.txtEmpIDReport);
             this.panel10.Controls.Add(this.label2);
             this.panel10.Controls.Add(this.btnSortByEmployeeId);
-            this.panel10.Location = new System.Drawing.Point(20, 16);
+            this.panel10.Location = new System.Drawing.Point(20, 26);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(605, 56);
             this.panel10.TabIndex = 26;
@@ -249,14 +249,15 @@
             // txtEmpIDReport
             // 
             this.txtEmpIDReport.BackColor = System.Drawing.Color.White;
-            this.txtEmpIDReport.Location = new System.Drawing.Point(147, 11);
+            this.txtEmpIDReport.Location = new System.Drawing.Point(125, 11);
             this.txtEmpIDReport.Name = "txtEmpIDReport";
-            this.txtEmpIDReport.Size = new System.Drawing.Size(264, 26);
+            this.txtEmpIDReport.Size = new System.Drawing.Size(286, 26);
             this.txtEmpIDReport.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(15, 14);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 20);
@@ -278,20 +279,21 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(672, 317);
+            this.tabPage2.Size = new System.Drawing.Size(672, 312);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Insert Attendance";
-            this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.TabPage2_Click);
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.lblAttendanceId);
             this.panel2.Controls.Add(this.lblEmployeeId);
@@ -322,7 +324,7 @@
             this.lblEmployeeId.AutoSize = true;
             this.lblEmployeeId.BackColor = System.Drawing.Color.White;
             this.lblEmployeeId.ForeColor = System.Drawing.Color.Black;
-            this.lblEmployeeId.Location = new System.Drawing.Point(47, 36);
+            this.lblEmployeeId.Location = new System.Drawing.Point(46, 33);
             this.lblEmployeeId.Name = "lblEmployeeId";
             this.lblEmployeeId.Size = new System.Drawing.Size(93, 18);
             this.lblEmployeeId.TabIndex = 1;
@@ -361,7 +363,7 @@
             this.lblDate.AutoSize = true;
             this.lblDate.BackColor = System.Drawing.Color.White;
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(47, 78);
+            this.lblDate.Location = new System.Drawing.Point(46, 79);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(43, 18);
             this.lblDate.TabIndex = 2;
@@ -372,9 +374,9 @@
             this.btnInsert.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInsert.ForeColor = System.Drawing.Color.White;
-            this.btnInsert.Location = new System.Drawing.Point(27, 225);
+            this.btnInsert.Location = new System.Drawing.Point(39, 225);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(335, 33);
+            this.btnInsert.Size = new System.Drawing.Size(346, 33);
             this.btnInsert.TabIndex = 5;
             this.btnInsert.Text = "INSERT";
             this.btnInsert.UseVisualStyleBackColor = false;
@@ -420,10 +422,10 @@
             this.tabPage3.Controls.Add(this.txtSearch);
             this.tabPage3.Controls.Add(this.dataGridView);
             this.tabPage3.Controls.Add(this.btnSearch);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(672, 317);
+            this.tabPage3.Size = new System.Drawing.Size(672, 312);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "View Attendanace";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -486,18 +488,10 @@
             // 
             // dataGridView
             // 
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.Black;
-            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.dataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.AttendId,
@@ -507,20 +501,20 @@
             this.LeftTime,
             this.Edit,
             this.Delete});
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle27.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView.Location = new System.Drawing.Point(13, 51);
             this.dataGridView.Name = "dataGridView";
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView.Size = new System.Drawing.Size(646, 201);
             this.dataGridView.TabIndex = 8;
             this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellContentClick);

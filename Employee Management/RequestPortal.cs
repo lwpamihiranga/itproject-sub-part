@@ -525,7 +525,7 @@ namespace Employee_Management
 
             for (int i = 0; i < 10; i++)
             {
-                helper.insert(ids.ElementAt(i),dates.ElementAt(i),hours.ElementAt(i),dept.ElementAt(i),desc.ElementAt(i));
+                helper.insert(ids.ElementAt(i), dates.ElementAt(i), hours.ElementAt(i), dept.ElementAt(i), desc.ElementAt(i));
             }
             MessageBox.Show("Inserted");
         }

@@ -85,6 +85,7 @@ namespace Employee_Management
                     txtUpdateEmpID.Text = row["EmpID"].ToString();
                     lblInTime.Text = row["inTime"].ToString();
                     //lblLeftTime.Text = row["outTime"].ToString();
+                   //dateTimePickerUpdate.Text = row["date"].ToString();
 
                     DateTime d = Convert.ToDateTime(row["date"].ToString());
                     DateTime newD = d.Date;

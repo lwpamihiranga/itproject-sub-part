@@ -66,7 +66,7 @@ namespace Employee_Management
             }
             return isSuccess;
         }
-        public bool Insert(int empID,String date,String time)
+        public bool Insert(int empID, String date, String time)
         {
             bool isSuccess = false;
 
@@ -77,7 +77,7 @@ namespace Employee_Management
                 string sql = "INSERT INTO Attendance(EmpID,date,inTime) VALUES (@EmpID,@date,@inTime)";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-          
+
                 cmd.Parameters.AddWithValue("@EmpID", empID);
                 cmd.Parameters.AddWithValue("@date", date);
                 cmd.Parameters.AddWithValue("@inTime", time);

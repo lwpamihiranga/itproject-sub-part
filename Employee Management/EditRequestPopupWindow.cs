@@ -30,6 +30,7 @@ namespace Employee_Management
 
             foreach (DataRow row in dt.Rows)
             {
+             
 
                 try
                 {
@@ -48,11 +49,10 @@ namespace Employee_Management
                     dateTimePicker1.Value = a;
 
                 }
-                catch(Exception edada)
+                catch (Exception edada)
                 {
 
                 }
-
 
             }
 

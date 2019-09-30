@@ -46,10 +46,6 @@ namespace Employee_Management
                 getReport = dt;
             }
 
-
-
-
-
         }
 
         private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -61,17 +57,17 @@ namespace Employee_Management
         {
             if (getReport == null)
             {
-                MessageBox.Show("Coudn't create report because the Dataset is Empty");
+                MessageBox.Show("No data for a report");
                 return;
             }
             AttendanceClass reports = new AttendanceClass();
-            if (reports.createPDF(getReport, "E:\\report\\report.pdf"))
+            if (reports.createPDF(getReport, "E:\\reports\\report.pdf"))
             {
-                MessageBox.Show("Report was saved ");
+                MessageBox.Show("Report was downloaded");
             }
             else
             {
-                MessageBox.Show("Something went wrong!");
+                MessageBox.Show("Something went wrong");
             }
         
     }

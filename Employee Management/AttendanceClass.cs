@@ -29,7 +29,6 @@ namespace Employee_Management
 
         static string myConnectionString = ConfigurationManager.ConnectionStrings["connection"].ConnectionString;
 
-
         public bool Insert(AttendanceClass a)
         {
             bool isSuccess = false;
@@ -130,7 +129,7 @@ namespace Employee_Management
             try
             {
                // SqlDataAdapter adapter = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE AttendID = " + sortID);
-                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE EmpID = " + sortID;
+                string sql = "SELECT EmpID,date,inTime,outTime  FROM Attendance WHERE EmpID = " + sortID;
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter2 = new SqlDataAdapter(cmd);
                 conn.Open();
@@ -162,7 +161,7 @@ namespace Employee_Management
             try
             {
                 // SqlDataAdapter adapter = new SqlDataAdapter("SELECT AttendID,EmpID,date,inTime,outTime FROM Attendance WHERE AttendID = " + sortID);
-                string sql = "SELECT AttendID,EmpID,date,inTime,outTime  FROM Attendance WHERE date = '" + date + "'";
+                string sql = "SELECT EmpID,date,inTime,outTime  FROM Attendance WHERE date = '" + date + "'";
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataAdapter adapter2 = new SqlDataAdapter(cmd);
                 conn.Open();
@@ -267,9 +266,6 @@ namespace Employee_Management
                 string sql = "DELETE FROM Attendance WHERE AttendID=@AttendID";
                 SqlCommand cmd = new SqlCommand(sql, conn);
 
-
-
-
                 cmd.Parameters.AddWithValue("@AttendID", id);
 
                 conn.Open();
@@ -296,56 +292,7 @@ namespace Employee_Management
             return isSuccess;
         }
 
-
-        /*
-         while (check == index)
-         {
-             /*conn.Open();
-
-             SqlCommand cmd3 = new SqlCommand("SELECT AttendID FROM Attendance WHERE AttendID=@AttendID ", conn);
-             cmd3.Parameters.AddWithValue("@AttendID", index);
-
-
-             SqlDataReader reader = cmd3.ExecuteReader();
-             while (reader.Read())
-             {
-                int AttendId = Convert.ToInt32(cmd3.Parameters["@AttendID"].Value);
-
-             }
-             */
-        //int AttendId = int.Parse(dataGridView.row["AttendId"].ToString());
-        //if (check == index)
-        //{
-        //  return AttendId;
-        //}
-        //else
-        //{
-        //   check++;
-        //}
-
-
-        //conn.Close();
-        /* string sql = "SELECT AttendID FROM Attendance WHERE AttendID=@AttendID";
-         using(var command= new SqlCommand(sql, conn)) 
-         {
-             conn.Open();
-             command.Parameters.AddWithValue("@AttendID", index);
-             using (var reader = command.ExecuteReader())
-             {
-                 // AttendId = reader.GetInt32(0);
-                 if (reader.Read())
-                 {
-                     AttendId = Convert.ToInt32(reader["AttendID"].ToString());
-                 }
-
-             }
-         }
-
-
-    */
-
-
-        //}
+     
         public bool createPDF(DataTable dataTable, string destinationPath)
         {
             try

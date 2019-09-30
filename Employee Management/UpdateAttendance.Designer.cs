@@ -58,9 +58,9 @@
             this.panel2.Controls.Add(this.dateTimePickerUpdate);
             this.panel2.Controls.Add(this.lblLeftTme);
             this.panel2.Controls.Add(this.lblArrivedTime);
-            this.panel2.Location = new System.Drawing.Point(74, 29);
+            this.panel2.Location = new System.Drawing.Point(68, 31);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(473, 305);
+            this.panel2.Size = new System.Drawing.Size(474, 305);
             this.panel2.TabIndex = 14;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel2_Paint);
             // 
@@ -107,7 +107,7 @@
             this.lblEmployeeId.BackColor = System.Drawing.Color.White;
             this.lblEmployeeId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmployeeId.ForeColor = System.Drawing.Color.Black;
-            this.lblEmployeeId.Location = new System.Drawing.Point(64, 40);
+            this.lblEmployeeId.Location = new System.Drawing.Point(63, 37);
             this.lblEmployeeId.Name = "lblEmployeeId";
             this.lblEmployeeId.Size = new System.Drawing.Size(93, 18);
             this.lblEmployeeId.TabIndex = 1;
@@ -131,7 +131,7 @@
             this.lblDate.BackColor = System.Drawing.Color.White;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDate.ForeColor = System.Drawing.Color.Black;
-            this.lblDate.Location = new System.Drawing.Point(64, 86);
+            this.lblDate.Location = new System.Drawing.Point(63, 80);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(43, 18);
             this.lblDate.TabIndex = 2;
@@ -142,7 +142,7 @@
             this.btnUpdate.BackColor = System.Drawing.Color.RoyalBlue;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(66, 249);
+            this.btnUpdate.Location = new System.Drawing.Point(66, 242);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(334, 33);
             this.btnUpdate.TabIndex = 5;
@@ -188,7 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 358);
+            this.ClientSize = new System.Drawing.Size(604, 358);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "UpdateAttendance";

@@ -250,5 +250,25 @@ namespace Employee_Management.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2019_09_30_at_9_23_22_AM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2019-09-30 at 9.23.22 AM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WhatsApp_Image_2019_09_30_at_9_28_20_AM {
+            get {
+                object obj = ResourceManager.GetObject("WhatsApp Image 2019-09-30 at 9.28.20 AM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

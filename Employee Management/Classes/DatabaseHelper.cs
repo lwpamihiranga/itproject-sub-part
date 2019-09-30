@@ -86,6 +86,29 @@ namespace Employee_Management.Classes
             }
             return dt;
         }
+        public DataTable getEmployeeIDs()
+        {
+            string conn = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+            SqlConnection c = new SqlConnection(conn);
+            DataTable dt = new DataTable();
+            try
+            {
+                string sql = "SELECT DISTINCT EmpId,Department FROM Employees";
+                SqlCommand cmd = new SqlCommand(sql, c);
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                c.Open();
+                adapter.Fill(dt);
+            }
+            catch (Exception e)
+            {
+
+            }
+            finally
+            {
+                c.Close();
+            }
+            return dt;
+        }
         public int getRequestId(int id)
         {
 

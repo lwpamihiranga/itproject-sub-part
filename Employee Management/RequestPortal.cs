@@ -15,6 +15,9 @@ namespace Employee_Management
     
     public partial class RequestPortal : UserControl
     {
+
+
+
         static int numberOfRows = 0;
         public static bool isSearchEnabled = false;
         public static int editRequestID = 0;
@@ -36,15 +39,42 @@ namespace Employee_Management
         private void RequestPortal_Load(object sender, EventArgs e)
         {
             dateTimePicker1.MinDate = DateTime.Today;
-
             DataTable dt = dbhelper.Select();
-
             numberOfRows = dbhelper.getNumberOfRows();
-
-
-
-
             gridView.DataSource = dt;
+
+            List<String> list = new List<string>();
+            List<String> list2 = new List<string>();
+
+            DatabaseHelper helper = new DatabaseHelper();
+            DataTable dtss = helper.getEmployeeIDs();
+            foreach (DataRow row in dtss.Rows)
+            {
+                list.Add(row["EmpId"].ToString());
+            }
+            foreach (DataRow row in dtss.Rows)
+            {
+                list2.Add(row["Department"].ToString());
+            }
+            string[] ids = list.ToArray();
+            string[] depts = list2.ToArray();
+
+
+            AutoCompleteStringCollection allowedTypes = new AutoCompleteStringCollection();
+            allowedTypes.AddRange(ids);
+            textBox1.AutoCompleteCustomSource = allowedTypes;
+            textBox1.AutoCompleteCustomSource = allowedTypes;
+            textBox1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBox1.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+
+
+            AutoCompleteStringCollection allowedTypes2 = new AutoCompleteStringCollection();
+            allowedTypes2.AddRange(depts);
+            textBox4.AutoCompleteCustomSource = allowedTypes2;
+            textBox4.AutoCompleteCustomSource = allowedTypes2;
+            textBox4.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBox4.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
         public void refreshDataGridView()
         {

@@ -30,10 +30,15 @@ namespace Employee_Management
         }
 
         private void Home_Load(object sender, EventArgs e)
-        {   
-                requestPortal1.Hide();
-                homeUserControl1.Show();
-                attendanceUserControl1.Hide();
+        {
+
+            pictureBox2.Image = Properties.Resources.sba;
+            requestPortal1.Hide();
+            attendanceUserControl1.Hide();
+
+          
+
+          
 
         }
 
@@ -99,23 +104,16 @@ namespace Employee_Management
 
         private void Button3_Click_2(object sender, EventArgs e)
         {
-            
-                requestPortal1.Show();
-                homeUserControl1.Hide();
-                attendanceUserControl1.Hide();
-
-
+            requestPortal1.Show();
+            attendanceUserControl1.Hide();
+            homeUserControl1.Hide();
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            
-                requestPortal1.Hide();
-                homeUserControl1.Hide();
-                attendanceUserControl1.Show();
-
-
-
+            requestPortal1.Hide();
+            homeUserControl1.Hide();
+            attendanceUserControl1.Show();
         }
 
         private void RequestPortal1_Load(object sender, EventArgs e)
@@ -125,23 +123,15 @@ namespace Employee_Management
 
         private void Button4_Click(object sender, EventArgs e)
         {
-           
-                requestPortal1.Hide();
-                homeUserControl1.Show();
-                attendanceUserControl1.Hide();
-
-
+            requestPortal1.Hide();
+            attendanceUserControl1.Hide();
+            homeUserControl1.Show();
         }
 
         private void HomeUserControl1_Load(object sender, EventArgs e)
         {
             
            
-        }
-
-        private void Attendance2_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

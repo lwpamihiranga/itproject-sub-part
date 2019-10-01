@@ -24,6 +24,8 @@ namespace Employee_Management
         static DataTable downloadingDataTable = null;
         //bool isThreadNeedToRun = false;
 
+        int count = 0;
+
         DatabaseHelper dbhelper = new DatabaseHelper();
         
         public RequestPortal()
@@ -457,6 +459,11 @@ namespace Employee_Management
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+
+            if(count >= 10)
+            {
+                return;
+            }
             List<String> dates = new List<String>();
             List<int> hours = new List<int>();
             List<String> dept = new List<String>();
@@ -521,13 +528,13 @@ namespace Employee_Management
             ids.Add("5");
             ids.Add("3");
 
-            DatabaseHelper helper = new DatabaseHelper();
 
-            for (int i = 0; i < 10; i++)
-            {
-                helper.insert(ids.ElementAt(i), dates.ElementAt(i), hours.ElementAt(i), dept.ElementAt(i), desc.ElementAt(i));
-            }
-            MessageBox.Show("Inserted");
+            textBox1.Text = ids.ElementAt(count);
+            textBox2.Text = "" + hours.ElementAt(count);
+            textBox4.Text = dept.ElementAt(count);
+            textDescription.Text = desc.ElementAt(count);
+
+            count++;
         }
     }
 }

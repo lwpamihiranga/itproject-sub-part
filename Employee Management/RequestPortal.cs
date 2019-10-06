@@ -431,9 +431,9 @@ namespace Employee_Management
                 return;
             }
             DatabaseHelper helper = new DatabaseHelper();
-            if (helper.createPDF(downloadingDataTable, "G:\\SQL LITE DATABSE\\report.pdf"))
+            if (helper.createPDF(downloadingDataTable, "D:\\Reports\\LeaveReport.pdf"))
             {
-                MessageBox.Show("Report was saved as G:\\SQL LITE DATABSE\\report.pdf");
+                MessageBox.Show("Report was saved as D:\\Reports\\LeaveReport.pdf");
             }
             else
             {
